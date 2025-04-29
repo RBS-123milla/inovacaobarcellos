@@ -14,9 +14,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 100vh;
     }
-    /* Estilo da barra de navegação */
+    /* Barra de navegação */
     nav {
       background-color: rgba(0, 0, 0, 0.8);
       position: fixed;
@@ -44,15 +43,16 @@
     nav ul li a:hover {
       color: #aaaaaa;
     }
-    /* Conteúdo principal */
-    .content {
+    /* Seções */
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
-    h1, p {
+    h1, h2 {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
@@ -61,8 +61,19 @@
       font-size: 2.5em;
       margin-bottom: 0.5em;
     }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
     p {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
       font-size: 1.2em;
+      max-width: 700px;
+      margin: 10px 0;
+    }
+    p.accent {
       color: #aaaaaa;
     }
   </style>
@@ -71,18 +82,28 @@
   <!-- Barra de navegação -->
   <nav>
     <ul>
-      <li><a href="#empresa">Empresa</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="empresa.html">Empresa</a></li>
       <li><a href="#clientes">Clientes</a></li>
       <li><a href="#parceiros">Parceiros</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </nav>
-  <!-- Conteúdo existente -->
-  <div class="content">
+
+  <!-- Seção Home (manutenção) -->
+  <section id="home">
     <h1>Inovação Barcellos</h1>
-    <p>Nosso site está em manutenção. Em breve, novidades!</p>
-    <p>Contato: contato@inovacaobarcellos.com.br</p>
-  </div>
+    <p class="accent">Nosso site está em manutenção. Em breve, novidades!</p>
+    <p class="accent">Contato: <a href="#contato">contato@inovacaobarcellos.com.br</a></p>
+  </section>
+
+  <!-- Seção Contato (placeholder) -->
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Estamos prontos para ouvir suas ideias e transformar seus desafios em soluções!</p>
+    <p>E-mail: <a href="mailto:contato@inovacaobarcellos.com.br">contato@inovacaobarcellos.com.br</a></p>
+    <p class="accent">Em breve, formulário de contato e mais canais de comunicação.</p>
+  </section>
 </body>
 </html>
