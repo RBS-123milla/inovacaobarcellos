@@ -8,12 +8,11 @@
     body {
       background-image: url('background-empresa.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: top center;
       background-repeat: no-repeat;
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
-      text-align: center;
     }
     /* Barra de navegação */
     nav {
@@ -45,12 +44,14 @@
     }
     /* Conteúdo */
     .content {
-      padding: 100px 20px;
+      padding: 80px 20px; /* Ajustado para consistência com index.html */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* Alinha o conteúdo à esquerda */
+      max-width: 600px; /* Largura da "janela" */
+      margin-left: 40px; /* Margem à esquerda para não encostar na borda */
     }
     h2 {
       background-color: rgba(0, 0, 0, 0.5);
@@ -58,14 +59,15 @@
       border-radius: 5px;
       font-size: 2em;
       margin-bottom: 1em;
+      text-align: left; /* Alinha o título à esquerda */
     }
     p {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
       font-size: 1.2em;
-      max-width: 700px;
-      margin: 10px 0;
+      margin: 10px 0; /* Mantém o espaçamento entre parágrafos */
+      text-align: left; /* Alinha o texto à esquerda */
     }
     a.cta {
       display: inline-block;
@@ -79,6 +81,17 @@
     }
     a.cta:hover {
       background-color: #aaaaaa;
+    }
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+      .content {
+        max-width: 90%; /* Ajusta a largura em celulares */
+        margin-left: 20px; /* Reduz margem em telas pequenas */
+        align-items: center; /* Centraliza em celulares, se preferir */
+      }
+      h2, p {
+        text-align: center; /* Opcional: centraliza texto em celulares */
+      }
     }
   </style>
 </head>
