@@ -12,6 +12,7 @@
       background-size: cover;
       background-position: center -50px;
       background-repeat: no-repeat;
+      background-attachment: fixed; /* Fundo fixo, não rola com o conteúdo (AJUSTE AQUI) */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -50,7 +51,7 @@
 
     /* Seção de projetos */
     section#projetos {
-      padding: 80px 5px 20px; /* Reduzido o padding lateral para máxima proximidade às margens (AJUSTE AQUI) */
+      padding: 80px 5px 20px; /* Padding lateral reduzido para máxima proximidade às margens (AJUSTE AQUI) */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,7 +65,7 @@
       margin-bottom: 40px; /* Espaço entre projetos (AJUSTE AQUI) */
       width: 100%;
       max-width: 1600px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
-      padding: 0 5px; /* Controla espaço lateral interno (AJUSTE AQUI) */
+      padding: 0 5px; /* Espaço lateral interno (AJUSTE AQUI) */
     }
 
     /* Estilo das imagens */
@@ -75,9 +76,11 @@
       transition: transform 0.3s;
       margin-right: 10px; /* Para imagens à esquerda (AJUSTE AQUI) */
       margin-left: 10px; /* Para imagens à direita (AJUSTE AQUI) */
+      opacity: 0.7; /* Transparência: 70% (30% transparente). Ajuste para 0.9 (10%), 0.5 (50%), etc. (AJUSTE AQUI) */
     }
     .projeto-container img:hover {
       transform: scale(1.05);
+      opacity: 1; /* Remove transparência no hover (AJUSTE AQUI, se desejar manter transparência) */
     }
 
     /* Caixa de texto */
@@ -115,10 +118,10 @@
       justify-content: flex-end; /* Alinha bem à direita da tela (AJUSTE AQUI) */
     }
 
-    /* Alinhamento para segundo projeto: imagem à direita, texto à esquerda, alinhado à esquerda */
+    /* Alinhamento para segundo projeto: imagem à esquerda, texto à direita */
     .projeto-container:nth-child(even) {
-      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-      justify-content: flex-start; /* Alinha à esquerda, como está atualmente (AJUSTE AQUI) */
+      flex-direction: row; /* Imagem à esquerda, texto à direita */
+      justify-content: flex-start; /* Alinha à esquerda do layout (AJUSTE AQUI) */
     }
 
     /* Responsividade para telas menores */
@@ -144,8 +147,8 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="empresa.html">Empresa</a></li>
-      <li><a href="index.html">Clientes</a></li>
-      <li><a href="index.html">Parceiros</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#parceiros">Parceiros</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
