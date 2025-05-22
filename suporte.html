@@ -12,7 +12,7 @@
       background-size: cover;
       background-position: center -100px;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* Fundo fixo, não rola (AJUSTE AQUI) */
+      background-attachment: fixed; /* Fundo fixo, não rola */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -51,7 +51,7 @@
 
     /* Seção de suporte */
     section#suporte {
-      padding: 80px 5px 20px; /* Padding lateral reduzido (AJUSTE AQUI) */
+      padding: 80px 5px 20px; /* Padding lateral reduzido */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,61 +62,61 @@
     .suporte-container {
       display: flex;
       align-items: center;
-      margin-bottom: 100px; /* Espaço entre blocos (AJUSTE AQUI) */
+      margin-bottom: 100px; /* Espaço entre blocos */
       width: 100%;
-      max-width: 1600px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
-      padding: 0 5px; /* Espaço lateral interno (AJUSTE AQUI) */
+      max-width: 1600px; /* Aumentado para aproximar das margens */
+      padding: 0 5px; /* Espaço lateral interno */
     }
 
     /* Estilo da primeira imagem */
     .suporte-container:nth-child(1) img {
-      max-width: 300px; /* Tamanho da primeira imagem (AJUSTE AQUI) */
+      max-width: 300px; /* Tamanho da primeira imagem */
       height: 300px;
       border-radius: 5px;
-      margin-right: 10px; /* Espaço à direita da imagem (AJUSTE AQUI) */
-      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+      margin-right: 10px; /* Espaço à direita da imagem */
+      opacity: 0.7; /* Transparência: 30% */
     }
 
     /* Estilo da segunda imagem */
     .suporte-container:nth-child(2) img {
-      max-width: 400px; /* Tamanho da segunda imagem, independente (AJUSTE AQUI) */
+      max-width: 400px; /* Tamanho da segunda imagem */
       height: 300px;
       border-radius: 5px;
-      margin-left: 10px; /* Espaço à esquerda da imagem (AJUSTE AQUI) */
-      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+      margin-left: 10px; /* Espaço à esquerda da imagem */
+      opacity: 0.7; /* Transparência: 30% */
     }
 
     /* Estilo do iframe (YouTube) */
     .suporte-container:nth-child(3) iframe {
-      max-width: 300px; /* Tamanho do vídeo (AJUSTE AQUI) */
+      max-width: 300px; /* Tamanho do vídeo */
       height: 300px;
       border-radius: 5px;
-      margin-right: 10px; /* Espaço à direita do iframe (AJUSTE AQUI) */
-      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+      margin-right: 10px; /* Espaço à direita do iframe */
+      opacity: 0.7; /* Transparência: 30% */
     }
 
     /* Efeito de hover para imagens e iframe */
     .suporte-container img:hover,
     .suporte-container iframe:hover {
       transform: scale(1.05);
-      opacity: 1; /* Remove transparência no hover (AJUSTE AQUI, se quiser manter transparência) */
+      opacity: 1; /* Remove transparência no hover */
     }
 
     /* Caixa de texto */
     .suporte-texto {
-      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente (AJUSTE AQUI: último valor para transparência, ex.: 0.3 para 70%) */
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
       padding: 15px;
       border-radius: 5px;
-      margin: 0 10px; /* Espaço entre imagem/vídeo e texto (AJUSTE AQUI) */
-      max-width: 400px; /* Largura da caixa de texto (AJUSTE AQUI) */
+      margin: 0 10px; /* Espaço entre imagem/vídeo e texto */
+      max-width: 400px; /* Largura da caixa de texto */
       text-align: left;
-      opacity: 0.8; /* Transparência da caixa de texto: 20% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+      opacity: 0.8; /* Transparência da caixa de texto: 20% */
     }
 
     /* Título do bloco */
     .suporte-texto h3 {
       font-size: 1.5em;
-      margin: 0 0 10px; /* Espaço abaixo do título (AJUSTE AQUI) */
+      margin: 0 0 10px; /* Espaço abaixo do título */
       text-transform: uppercase;
     }
 
@@ -126,35 +126,51 @@
       margin: 0;
     }
 
-    /* Estilo para "Saiba Mais" */
-    .saiba-mais {
-      color: red;
-      font-weight: bold;
+    /* Estilo para "Clique no Link" */
+    .clique-no-links {
+      color: red; /* Vermelho */
+      font-weight: normal; /* Sem negrito, para diferenciar do estilo anterior */
     }
 
     /* Estilo para o link do vídeo */
     .video-link {
-      display: block;
+      display: inline-block; /* Para alinhar com o botão */
       color: #ffffff;
       text-decoration: underline;
       font-size: 1em;
-      margin-top: 10px; /* Espaço acima do link (AJUSTE AQUI) */
+      margin-top: 10px; /* Espaço acima do link */
+      margin-right: 10px; /* Espaço entre link e botão */
       text-align: left;
     }
     .video-link:hover {
       color: #aaaaaa;
     }
 
+    /* Estilo para o botão de copiar */
+    .copy-button {
+      padding: 5px 10px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .copy-button:hover {
+      background-color: #aaaaaa;
+    }
+
     /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
     .suporte-container:nth-child(odd) {
       flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
-      justify-content: flex-start; /* Alinha à esquerda do layout (AJUSTE AQUI) */
+      justify-content: flex-start; /* Alinha à esquerda do layout */
     }
 
     /* Alinhamento: segunda imagem à direita, texto à esquerda */
     .suporte-container:nth-child(even) {
       flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-      justify-content: flex-end; /* Alinha à direita do layout (AJUSTE AQUI) */
+      justify-content: flex-end; /* Alinha à direita do layout */
     }
 
     /* Responsividade para telas menores */
@@ -172,8 +188,11 @@
       .suporte-container iframe {
         margin: 0; /* Remove margens laterais em telas pequenas */
       }
-      .video-link {
+      .video-link,
+      .copy-button {
         text-align: center;
+        display: block; /* Empilha verticalmente em telas pequenas */
+        margin: 10px auto;
       }
     }
   </style>
@@ -202,7 +221,7 @@
       </a>
       <div class="suporte-texto">
         <h3>DETALHE DO SUPORTE</h3>
-        <p>O Suporte Temporário de Base Fusivel, foi desenvolvido a partir de uma necessidade da EDP-ES, para agilizar o reestabelicmento de energia elétrica em casos de danos a base fusível, onde o tempo de reparo manual e substituição da mesma é demorado e afeta os clientes da EDP-ES. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que permite a instalação de uma base fusível nova provisória, de modo à distância, onde é possível ser feita sua instalação e reestabelecimento da energia eletrica em até 10 minutos com segurança.  <span class="saiba-mais">Saiba Mais.</span></p>
+        <p>O Suporte Temporário de Base Fusivel, foi desenvolvido a partir de uma necessidade da EDP-ES, para agilizar o reestabelicmento de energia elétrica em casos de danos a base fusível, onde o tempo de reparo manual e substituição da mesma é demorado e afeta os clientes da EDP-ES. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que permite a instalação de uma base fusível nova, de forma provisória no método à distância, onde é possível ser feita sua instalação e reestabelecimento da energia eletrica em até 10 minutos com segurança. O Suporte Temporário já foi testado, aprovado e homologado na EDP.</p>
       </div>
     </div>
 
@@ -213,21 +232,32 @@
       </a>
       <div class="suporte-texto">
         <h3>FUNCIONALIDADE DO SUPORTE</h3>
-        <p>Construido para ser de fácil instalação e durável, o Suporte Temporário de Base Fusivel, é excelente nos quesitos: Segurança para o operador, Segurança para a estrutura(não sobrecarrega a estruturas ou cabos), Segurança para o eletricista(pois é instalado ao metodo distância), Resitente as interpéries e muito leve. <span class="saiba-mais">Saiba Mais.</span></p>
+        <p>Construido para ser de fácil instalação e durável, o Suporte Temporário de Base Fusivel, é excelente nos quesitos: Segurança para a estrutura(não sobrecarrega a estruturas ou cabos), Segurança para o eletricista(pois é leve e é instalado no metodo à distância) e resitente as interpéries.</p>
       </div>
     </div>
 
     <!-- Terceiro Bloco: Vídeo à esquerda, texto à direita -->
     <div class="suporte-container">
       <a href="https://youtu.be/MYrw8YnrabI" target="_blank">
-        <iframe src="https://youtu.be/MYrw8YnrabI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/MYrw8YnrabI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </a>
       <div class="suporte-texto">
         <h3>DEMONSTRAÇÃO EM VÍDEO</h3>
         <p>Vídeo mostrando o Suporte Temporário em ação, destacando sua instalação e uso prático. <span class="clique-no-links">Clique no Link.</span></p>
         <a href="https://youtu.be/MYrw8YnrabI" class="video-link" target="_blank">Assista no YouTube: https://youtu.be/MYrw8YnrabI</a>
+        <button class="copy-button" onclick="copyLink()">Copiar Link</button>
       </div>
     </div>
   </section>
+
+  <!-- JavaScript para copiar o link -->
+  <script>
+    function copyLink() {
+      const link = "https://youtu.be/MYrw8YnrabI";
+      navigator.clipboard.writeText(link).then(() => {
+        alert("Link copiado para a área de transferência!");
+      });
+    }
+  </script>
 </body>
 </html>
