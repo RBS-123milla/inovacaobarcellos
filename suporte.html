@@ -68,22 +68,22 @@
       padding: 0 5px; /* Espaço lateral interno */
     }
 
-    /* Estilo da primeira imagem */
-    .suporte-container:nth-child(1) img {
-      max-width: 300px; /* Tamanho da primeira imagem */
-      height: 300px;
+    /* Estilo unificado para todas as imagens */
+    .suporte-container img {
+      max-width: 300px; /* Mesmo tamanho para primeira e segunda imagem */
+      height: 300px; /* Mesmo tamanho para primeira e segunda imagem */
       border-radius: 5px;
-      margin-right: 10px; /* Espaço à direita da imagem */
       opacity: 0.7; /* Transparência: 30% */
     }
 
-    /* Estilo da segunda imagem */
-    .suporte-container:nth-child(2) img {
-      max-width: 250px; /* Tamanho da segunda imagem */
-      height: 250px;
-      border-radius: 5px;
+    /* Margem para primeira imagem (à esquerda) */
+    .suporte-container:nth-child(odd) img {
+      margin-right: 10px; /* Espaço à direita da imagem */
+    }
+
+    /* Margem para segunda imagem (à direita) */
+    .suporte-container:nth-child(even) img {
       margin-left: 10px; /* Espaço à esquerda da imagem */
-      opacity: 0.7; /* Transparência: 30% */
     }
 
     /* Estilo do iframe (YouTube) */
@@ -129,7 +129,7 @@
     /* Estilo para "Clique no Link" */
     .clique-no-links {
       color: red; /* Vermelho */
-      font-weight: normal; /* Sem negrito, para diferenciar do estilo anterior */
+      font-weight: normal; /* Sem negrito */
     }
 
     /* Estilo para o link do vídeo */
