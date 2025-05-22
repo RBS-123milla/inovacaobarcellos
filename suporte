@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Suporte Temporário de Base Fusível - Inovação Barcellos" />
+  <title>Suporte Temporário - Inovação Barcellos</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center -50px;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Fundo fixo, não rola (AJUSTE AQUI) */
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    /* Barra de navegação */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #aaaaaa;
+    }
+
+    /* Seção de suporte */
+    section#suporte {
+      padding: 80px 5px 20px; /* Padding lateral reduzido (AJUSTE AQUI) */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Contêiner para cada bloco (imagem/vídeo + texto) */
+    .suporte-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px; /* Espaço entre blocos (AJUSTE AQUI) */
+      width: 100%;
+      max-width: 1600px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
+      padding: 0 5px; /* Espaço lateral interno (AJUSTE AQUI) */
+    }
+
+    /* Estilo da primeira imagem */
+    .suporte-container:nth-child(1) img {
+      max-width: 300px; /* Tamanho da primeira imagem (AJUSTE AQUI) */
+      height: 300px;
+      border-radius: 5px;
+      margin-right: 10px; /* Espaço à direita da imagem (AJUSTE AQUI) */
+      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+    }
+
+    /* Estilo da segunda imagem */
+    .suporte-container:nth-child(2) img {
+      max-width: 400px; /* Tamanho da segunda imagem, independente (AJUSTE AQUI) */
+      height: 300px;
+      border-radius: 5px;
+      margin-left: 10px; /* Espaço à esquerda da imagem (AJUSTE AQUI) */
+      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+    }
+
+    /* Estilo do vídeo */
+    .suporte-container:nth-child(3) video {
+      max-width: 400px; /* Tamanho do vídeo (AJUSTE AQUI) */
+      height: 300px;
+      border-radius: 5px;
+      margin-right: 10px; /* Espaço à direita do vídeo (AJUSTE AQUI) */
+      opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+    }
+
+    /* Efeito de hover para imagens e vídeo */
+    .suporte-container img:hover,
+    .suporte-container video:hover {
+      transform: scale(1.05);
+      opacity: 1; /* Remove transparência no hover (AJUSTE AQUI, se quiser manter transparência) */
+    }
+
+    /* Caixa de texto */
+    .suporte-texto {
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente (AJUSTE AQUI: último valor para transparência, ex.: 0.3 para 70%) */
+      padding: 15px;
+      border-radius: 5px;
+      margin: 0 10px; /* Espaço entre imagem/vídeo e texto (AJUSTE AQUI) */
+      max-width: 400px; /* Largura da caixa de texto (AJUSTE AQUI) */
+      text-align: left;
+      opacity: 0.8; /* Transparência da caixa de texto: 20% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
+    }
+
+    /* Título do bloco */
+    .suporte-texto h3 {
+      font-size: 1.5em;
+      margin: 0 0 10px; /* Espaço abaixo do título (AJUSTE AQUI) */
+      text-transform: uppercase;
+    }
+
+    /* Descrição do bloco */
+    .suporte-texto p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    /* Estilo para "Saiba Mais" */
+    .saiba-mais {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
+    .suporte-container:nth-child(odd) {
+      flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
+      justify-content: flex-start; /* Alinha à esquerda do layout (AJUSTE AQUI) */
+    }
+
+    /* Alinhamento: segunda imagem à direita, texto à esquerda */
+    .suporte-container:nth-child(even) {
+      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+      justify-content: flex-end; /* Alinha à direita do layout (AJUSTE AQUI) */
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+      .suporte-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .suporte-texto {
+        margin: 10px 0;
+        max-width: 90%;
+      }
+      .suporte-container img,
+      .suporte-container video {
+        margin: 0; /* Remove margens laterais em telas pequenas */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="empresa.html">Empresa</a></li>
+      <li><a href="index.html">Clientes</a></li>
+      <li><a href="index.html">Parceiros</a></li>
+      <li><a href="projeto.html">Projetos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Seção Suporte -->
+  <section id="suporte">
+    <h1>Suporte Temporário de Base Fusível</h1>
+
+    <!-- Primeiro Bloco: Imagem à esquerda, texto à direita -->
+    <div class="suporte-container">
+      <a href="#suporte">
+        <img src="suporte1.jpg" alt="Suporte Imagem 1">
+      </a>
+      <div class="suporte-texto">
+        <h3>DETALHE DO SUPORTE</h3>
+        <p>Descrição detalhada sobre o suporte temporário de base fusível. Insira informações específicas aqui. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
+    </div>
+
+    <!-- Segundo Bloco: Imagem à direita, texto à esquerda -->
+    <div class="suporte-container">
+      <a href="#suporte">
+        <img src="suporte2.jpg" alt="Suporte Imagem 2">
+      </a>
+      <div class="suporte-texto">
+        <h3>FUNCIONALIDADE DO SUPORTE</h3>
+        <p>Descrição sobre a funcionalidade do suporte temporário, como ele é instalado e seus benefícios. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
+    </div>
+
+    <!-- Terceiro Bloco: Vídeo à esquerda, texto à direita -->
+    <div class="suporte-container">
+      <a href="#suporte">
+        <video controls autoplay muted loop>
+          <source src="video.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </a>
+      <div class="suporte-texto">
+        <h3>DEMONSTRAÇÃO EM VÍDEO</h3>
+        <p>Vídeo mostrando o suporte temporário em ação, destacando sua instalação e uso prático. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
