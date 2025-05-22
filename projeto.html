@@ -50,7 +50,7 @@
 
     /* Seção de projetos */
     section#projetos {
-      padding: 80px 10px 20px; /* Reduzido o padding lateral (AJUSTE AQUI) */
+      padding: 80px 5px 20px; /* Reduzido o padding lateral para máxima proximidade às margens (AJUSTE AQUI) */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -63,8 +63,8 @@
       align-items: center;
       margin-bottom: 40px; /* Espaço entre projetos (AJUSTE AQUI) */
       width: 100%;
-      max-width: 1400px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
-      padding: 0 10px; /* Controla espaço lateral interno (AJUSTE AQUI) */
+      max-width: 1600px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
+      padding: 0 5px; /* Controla espaço lateral interno (AJUSTE AQUI) */
     }
 
     /* Estilo das imagens */
@@ -73,8 +73,8 @@
       height: 300px;
       border-radius: 5px;
       transition: transform 0.3s;
-      margin-right: 10px; /* Para imagens à esquerda (primeiro e terceiro) (AJUSTE AQUI) */
-      margin-left: 10px; /* Para imagens à direita (segundo) (AJUSTE AQUI) */
+      margin-right: 10px; /* Para imagens à esquerda (AJUSTE AQUI) */
+      margin-left: 10px; /* Para imagens à direita (AJUSTE AQUI) */
     }
     .projeto-container img:hover {
       transform: scale(1.05);
@@ -103,16 +103,22 @@
       margin: 0;
     }
 
-    /* Alinhamento para primeiro e terceiro projetos: imagem à esquerda, texto à direita, bem à direita */
-    .projeto-container:nth-child(odd) {
-      flex-direction: row;
-      justify-content: flex-end; /* Alinha à direita da tela (AJUSTE AQUI) */
+    /* Estilo para "Saiba Mais" */
+    .saiba-mais {
+      color: red; /* Vermelho */
+      font-weight: bold; /* Negrito */
     }
 
-    /* Alinhamento para segundo projeto: imagem à direita, texto à esquerda, mantém como está */
+    /* Alinhamento para primeiro e terceiro projetos: imagem à direita, texto à esquerda */
+    .projeto-container:nth-child(odd) {
+      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+      justify-content: flex-end; /* Alinha bem à direita da tela (AJUSTE AQUI) */
+    }
+
+    /* Alinhamento para segundo projeto: imagem à direita, texto à esquerda, alinhado à esquerda */
     .projeto-container:nth-child(even) {
-      flex-direction: row-reverse;
-      justify-content: flex-end; /* Mantido como está */
+      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+      justify-content: flex-start; /* Alinha à esquerda, como está atualmente (AJUSTE AQUI) */
     }
 
     /* Responsividade para telas menores */
@@ -138,8 +144,8 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="empresa.html">Empresa</a></li>
-      <li><a href="#clientes">Clientes</a></li>
-      <li><a href="#parceiros">Parceiros</a></li>
+      <li><a href="index.html">Clientes</a></li>
+      <li><a href="index.html">Parceiros</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
@@ -151,34 +157,36 @@
 
     <!-- Projeto 1 -->
     <div class="projeto-container">
-    <a href="#bloqueador">
-      <img src="projeto1.jpg" alt="Projeto Bloqueador">
-    </a>
-    <div class="projeto-texto">
-      <h3>BLOQUEADOR DE CIRCUITOS DE BASE FUSIVEL</h3>
-      <p>Desenvolvido em parceria com a EDP ES, o bloqueador de circuitos da INOVAÇÃO BARCELLOS, impede o religamento de redes desenergizadas em operações de manutenção ou suspensão do fornecimento de energia elétrica a clientes atendidos em média tensão. <span class="saiba-mais">Saiba Mais.</span></p>
+      <a href="#bloqueador">
+        <img src="projeto1.jpg" alt="Projeto Bloqueador">
+      </a>
+      <div class="projeto-texto">
+        <h3>BLOQUEADOR DE CIRCUITOS DE BASE FUSIVEL</h3>
+        <p>Desenvolvido em parceria com a EDP ES, o bloqueador de circuitos da INOVAÇÃO BARCELLOS, impede o religamento de redes desenergizadas em operações de manutenção ou suspensão do fornecimento de energia elétrica a clientes atendidos em média tensão. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
     </div>
-  </div>
 
-  <!-- Projeto 2 -->
-  <div class="projeto-container">
-    <a href="#suporte">
-      <img src="projeto2.jpg" alt="Projeto Suporte">
-    </a>
-    <div class="projeto-texto">
-      <h3>SUPORTE TEMPORÁRIO DE BASE FUSÍVEL</h3>
-      <p>Desenvolvido em parceria com a EDP ES, o Suporte temporário da INOVAÇÃO BARCELLOS, permite a instalação da base fusível a distância, com segurança e rapidez, permitindo o reestabelecimento da energia elétrica em até 10 minutos. <span class="saiba-mais">Saiba Mais.</span></p>
+    <!-- Projeto 2 -->
+    <div class="projeto-container">
+      <a href="#suporte">
+        <img src="projeto2.jpg" alt="Projeto Suporte">
+      </a>
+      <div class="projeto-texto">
+        <h3>SUPORTE TEMPORÁRIO DE BASE FUSÍVEL</h3>
+        <p>Desenvolvido em parceria com a EDP ES, o Suporte temporário da INOVAÇÃO BARCELLOS, permite a instalação da base fusível a distância, com segurança e rapidez, permitindo o reestabelecimento da energia elétrica em até 10 minutos. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
     </div>
-  </div>
 
-  <!-- Projeto 3 -->
-  <div class="projeto-container">
-    <a href="#carro">
-      <img src="projeto3.jpg" alt="Projeto Carro">
-    </a>
-    <div class="projeto-texto">
-      <h3>CARRO PARA TRANSPORTE DE TRANSFORMADOR</h3>
-      <p>Carro movido a motor a combustão com 7 cavalos de potência, adaptado pela INOVAÇÃO BARCELLOS em parceria com a EDP ES, tem a capacidade de transporte de transformadores de até 500kg. <span class="saiba-mais">Saiba Mais.</span></p>
+    <!-- Projeto 3 -->
+    <div class="projeto-container">
+      <a href="#carro">
+        <img src="projeto3.jpg" alt="Projeto Carro">
+      </a>
+      <div class="projeto-texto">
+        <h3>CARRO PARA TRANSPORTE DE TRANSFORMADOR</h3>
+        <p>Carro movido a motor a combustão com 7 cavalos de potência, adaptado pela INOVAÇÃO BARCELLOS em parceria com a EDP ES, tem a capacidade de transporte de transformadores de até 500kg. <span class="saiba-mais">Saiba Mais.</span></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</body>
+</html>
