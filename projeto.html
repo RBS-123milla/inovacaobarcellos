@@ -59,16 +59,17 @@
 
     /* Contêiner para cada projeto (imagem + texto) */
     .projeto-container {
+      display: flex; /* Usa flexbox para alinhar imagem e texto lado a lado */
+      align-items: center; /* Alinha verticalmente imagem e texto */
       margin-bottom: 40px; /* Espaço entre projetos (AJUSTE AQUI) */
       width: 100%;
-      max-width: 800px; /* Limita a largura do contêiner */
+      max-width: 1000px; /* Aumentado para acomodar imagem + texto (AJUSTE AQUI) */
     }
 
     /* Estilo das imagens */
     .projeto-container img {
-      max-width: 300px; /* Imagem responsiva */
+      max-width: 300px; /* Tamanho da imagem (AJUSTE AQUI) */
       height: 300px;
-      display: block;
       border-radius: 5px;
       transition: transform 0.3s; /* Efeito de hover */
     }
@@ -76,36 +77,54 @@
       transform: scale(1.05); /* Leve zoom ao passar o mouse */
     }
 
-    /* Alinhamento alternado das imagens */
-    .projeto-container:nth-child(1) {
-      text-align: left; /* Primeira imagem à esquerda */
-    }
-    .projeto-container:nth-child(2) {
-      text-align: right; /* Segunda imagem à direita */
-    }
-    .projeto-container:nth-child(3) {
-      text-align: left; /* Terceira imagem à esquerda */
-    }
-
     /* Caixa de texto */
     .projeto-texto {
       background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
       padding: 15px;
       border-radius: 5px;
-      font-size: 1.2em;
-      margin-top: 10px; /* Espaço entre imagem e texto (AJUSTE AQUI) */
-      margin-bottom: 20px; /* Espaço entre texto e próxima imagem (AJUSTE AQUI) */
-      max-width: 600px; /* Largura da caixa de texto (AJUSTE AQUI) */
-      text-align: center; /* Centraliza o texto dentro da caixa */
+      margin: 0 20px; /* Espaço entre imagem e texto (AJUSTE AQUI) */
+      max-width: 400px; /* Largura da caixa de texto (AJUSTE AQUI) */
+      text-align: left; /* Texto alinhado à esquerda dentro da caixa */
+    }
+
+    /* Título do projeto */
+    .projeto-texto h3 {
+      font-size: 1.5em;
+      margin: 0 0 10px; /* Espaço abaixo do título (AJUSTE AQUI) */
+      text-transform: uppercase; /* Título em maiúsculas */
+    }
+
+    /* Descrição do projeto */
+    .projeto-texto p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    /* Alinhamento alternado: imagem à esquerda, texto à direita */
+    .projeto-container:nth-child(odd) {
+      flex-direction: row; /* Imagem à esquerda, texto à direita */
+      justify-content: flex-start; /* Alinha à esquerda do contêiner */
+    }
+
+    /* Alinhamento alternado: imagem à direita, texto à esquerda */
+    .projeto-container:nth-child(even) {
+      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+      justify-content: flex-end; /* Alinha à direita do contêiner */
     }
 
     /* Responsividade para telas menores */
     @media (max-width: 768px) {
       .projeto-container {
-        text-align: center; /* Centraliza tudo em telas pequenas */
+        flex-direction: column; /* Empilha imagem e texto em telas pequenas */
+        align-items: center;
+        text-align: center;
       }
       .projeto-texto {
-        max-width: 90%; /* Ajusta a caixa de texto para telas menores */
+        margin: 10px 0; /* Ajusta margem para telas pequenas (AJUSTE AQUI) */
+        max-width: 90%; /* Ajusta a caixa de texto */
+      }
+      .projeto-container img {
+        margin: 0; /* Remove margens laterais em telas pequenas */
       }
     }
   </style>
@@ -129,34 +148,34 @@
 
     <!-- Projeto 1 -->
     <div class="projeto-container">
-      <a href="bloqueador.html">
+      <a href="#bloqueador">
         <img src="projeto1.jpg" alt="Projeto Bloqueador">
       </a>
       <div class="projeto-texto">
-        Insira o texto sobre o projeto Bloqueador aqui.
+        <h3>BLOQUEADOR</h3>
+        <p>Insira a descrição sobre o projeto Bloqueador aqui.</p>
       </div>
     </div>
 
     <!-- Projeto 2 -->
     <div class="projeto-container">
-      <a href="suporte.html">
+      <a href="#suporte">
         <img src="projeto2.jpg" alt="Projeto Suporte">
       </a>
       <div class="projeto-texto">
-        Insira o texto sobre o projeto Suporte aqui.
+        <h3>SUPORTE</h3>
+        <p>Insira a descrição sobre o projeto Suporte aqui.</p>
       </div>
     </div>
 
     <!-- Projeto 3 -->
     <div class="projeto-container">
-      <a href="carro.html">
+      <a href="#carro">
         <img src="projeto3.jpg" alt="Projeto Carro">
       </a>
       <div class="projeto-texto">
-                  CARRO PARA TRASNPORTE DE TRANSFORMADOR
-            Carro movido a motor a combustão com 7 cavalos de potência,
-            adaptado pela INOVAÇÃO BARCELLOS em parceria com a EDP ES, 
-            tem a capacidade de transporte de transformadores de até 500kg.
+        <h3>CARRO PARA TRANSPORTE DE TRANSFORMADOR</h3>
+        <p>Carro movido a motor a combustão com 7 cavalos de potência, carro adaptado pela INOVAÇÃO BARCELLOS em parceria com a EDP ES, tem a capacidade de transporte de transformadores de até 500kg.</p>
       </div>
     </div>
   </section>
