@@ -86,18 +86,18 @@
       opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
     }
 
-    /* Estilo do vídeo */
-    .suporte-container:nth-child(3) video {
+    /* Estilo do iframe (YouTube) */
+    .suporte-container:nth-child(3) iframe {
       max-width: 400px; /* Tamanho do vídeo (AJUSTE AQUI) */
       height: 300px;
       border-radius: 5px;
-      margin-right: 10px; /* Espaço à direita do vídeo (AJUSTE AQUI) */
+      margin-right: 10px; /* Espaço à direita do iframe (AJUSTE AQUI) */
       opacity: 0.7; /* Transparência: 30% (AJUSTE AQUI: 0.9 para 10%, 0.5 para 50%) */
     }
 
-    /* Efeito de hover para imagens e vídeo */
+    /* Efeito de hover para imagens e iframe */
     .suporte-container img:hover,
-    .suporte-container video:hover {
+    .suporte-container iframe:hover {
       transform: scale(1.05);
       opacity: 1; /* Remove transparência no hover (AJUSTE AQUI, se quiser manter transparência) */
     }
@@ -132,6 +132,19 @@
       font-weight: bold;
     }
 
+    /* Estilo para o link do vídeo */
+    .video-link {
+      display: block;
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 1em;
+      margin-top: 10px; /* Espaço acima do link (AJUSTE AQUI) */
+      text-align: left;
+    }
+    .video-link:hover {
+      color: #aaaaaa;
+    }
+
     /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
     .suporte-container:nth-child(odd) {
       flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
@@ -156,8 +169,11 @@
         max-width: 90%;
       }
       .suporte-container img,
-      .suporte-container video {
+      .suporte-container iframe {
         margin: 0; /* Remove margens laterais em telas pequenas */
+      }
+      .video-link {
+        text-align: center;
       }
     }
   </style>
@@ -168,9 +184,9 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="empresa.html">Empresa</a></li>
-      <li><a href="index.html">Clientes</a></li>
-      <li><a href="index.html">Parceiros</a></li>
-      <li><a href="projeto.html">Projetos</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#parceiros">Parceiros</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
       <li><a href="contato.html">Contato</a></li>
     </ul>
   </nav>
@@ -182,18 +198,18 @@
     <!-- Primeiro Bloco: Imagem à esquerda, texto à direita -->
     <div class="suporte-container">
       <a href="#suporte">
-        <img src="suporte1.jpg" alt="Suporte Imagem 1">
+        <img src="imagens/suporte1.jpg" alt="Suporte Imagem 1">
       </a>
       <div class="suporte-texto">
         <h3>DETALHE DO SUPORTE</h3>
-        <p>Descrição detalhada sobre o suporte temporário de base fusível. Insira informações específicas aqui. <span class="saiba-mais">Saiba Mais.</span></p>
+        <p>Desenvolvido em parceria com a EDP ES, o Suporte Temporário permite a instalação segura e rápida da base fusível, garantindo eficiência. <span class="saiba-mais">Saiba Mais.</span></p>
       </div>
     </div>
 
     <!-- Segundo Bloco: Imagem à direita, texto à esquerda -->
     <div class="suporte-container">
       <a href="#suporte">
-        <img src="suporte2.jpg" alt="Suporte Imagem 2">
+        <img src="imagens/suporte2.jpg" alt="Suporte Imagem 2">
       </a>
       <div class="suporte-texto">
         <h3>FUNCIONALIDADE DO SUPORTE</h3>
@@ -203,15 +219,13 @@
 
     <!-- Terceiro Bloco: Vídeo à esquerda, texto à direita -->
     <div class="suporte-container">
-      <a href="#suporte">
-        <video controls autoplay muted loop>
-          <source src="video.mp4" type="video/mp4">
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
+      <a href="https://youtu.be/MYrw8YnrabI" target="_blank">
+        <iframe src="https://www.youtube.com/embed/SEU_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </a>
       <div class="suporte-texto">
         <h3>DEMONSTRAÇÃO EM VÍDEO</h3>
         <p>Vídeo mostrando o suporte temporário em ação, destacando sua instalação e uso prático. <span class="saiba-mais">Saiba Mais.</span></p>
+        <a href="https://youtu.be/MYrw8YnrabI" class="video-link" target="_blank">Assista no YouTube: https://youtu.be/MYrw8YnrabI</a>
       </div>
     </div>
   </section>
