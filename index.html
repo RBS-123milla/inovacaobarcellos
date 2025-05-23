@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 135vh; /* Altura mínima da tela */
+      min-height: 150vh; /* Aumentado para mais rolagem */
     }
 
     /* Barra de navegação */
@@ -53,25 +53,12 @@
     section {
       padding: 80px 20px 100px;
       position: relative; /* Contêiner de referência para position: absolute */
-      height: 100vh; /* Limita a altura para evitar expansão do body */
+      min-height: 100vh; /* Altura mínima, permite expansão */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-    }
-
-    /* Estilo do título principal */
-    h1 {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 5px;
-      font-size: 2.5em;
-      position: absolute; /* Posicionamento independente do layout */
-      top: 710px; /* Ajuste a posição vertical (ex.: 10%, 30%, 100px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento horizontal */
-      margin: 0; /* Remove margens para evitar impacto no layout */
     }
 
     /* Estilo dos parágrafos */
@@ -81,21 +68,21 @@
       border-radius: 5px;
       font-size: 1.8em;
       max-width: 700px;
-      position: absolute; /* Posicionamento independente */
-      top: 790px; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento */
-      margin: 0; /* Remove margens */
+      position: absolute;
+      top: 790px; /* Posição para PC */
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
       color: #aaaaaa;
     }
 
     /* Estilo dos links de contato */
     .contact-info {
-      position: absolute; /* Posicionamento independente */
-      top: 600px; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento */
-      margin: 0; /* Remove margens */
+      position: absolute;
+      top: 600px; /* Posição para PC */
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
     }
     .contact-info a {
       color: #ffffff;
@@ -119,20 +106,31 @@
 
     /* Responsividade para telas menores */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-        top: 15%; /* Ajuste para telas menores */
+      body {
+        background-size: 100% auto; /* Preenche largura, mantém proporção */
+        background-position: center top; /* Foca no topo da imagem */
       }
       p.accent {
-        font-size: 1em;
-        max-width: 90%;
-        top: 30%; /* Ajuste para telas menores */
+        font-size: 1em; /* Texto menor */
+        max-width: 90%; /* Evita transbordo */
+        top: 25%; /* Posição ajustada para celular */
       }
       .contact-info {
-        top: 45%; /* Ajuste para telas menores */
+        top: 40%; /* Posição ajustada para celular */
       }
       section {
-        padding: 60px 10px 80px;
+        padding: 40px 10px 60px; /* Menos espaço no celular */
+      }
+    }
+
+    /* Ajustes para celulares muito pequenos */
+    @media (max-width: 480px) {
+      p.accent {
+        font-size: 0.9em;
+        top: 20%; /* Mais para cima */
+      }
+      .contact-info {
+        top: 35%; /* Mais para cima */
       }
     }
   </style>
@@ -152,7 +150,6 @@
 
   <!-- Seção Home -->
   <section id="home">
-    <h1></h1>
     <p class="accent">Conheça um pouco mais da Empresa. Em breve, NOVOS LANÇAMENTOS!</p>
     <div class="contact-info">
       <p>E-mail: <a href="mailto:contato@inovacaobarcellos.com.br">contato@inovacaobarcellos.com.br</a></p>
