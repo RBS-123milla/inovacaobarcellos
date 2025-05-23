@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bloqueador de Circuitos de Base Fusível - Inovação Barcellos" />
+  <title>Bloqueador de Circuitos - Inovação Barcellos</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center -100px;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Fundo fixo, não rola */
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    /* Barra de navegação */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #aaaaaa;
+    }
+
+    /* Seção de bloqueador */
+    section#suporte {
+      padding: 80px 5px 20px; /* Padding lateral reduzido */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Contêiner para cada bloco (imagem/vídeo + texto) */
+    .bloqueador-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 100px; /* Espaço entre blocos */
+      width: 100%;
+      max-width: 1600px; /* Aumentado para aproximar das margens */
+      padding: 0 5px; /* Espaço lateral interno */
+    }
+
+    /* Estilo unificado para todas as imagens */
+    .bloqueador-container img {
+      max-width: 300px; /* Mesmo tamanho para primeira e segunda imagem */
+      height: 300px; /* Mesmo tamanho para primeira e segunda imagem */
+      border-radius: 5px;
+      opacity: 0.7; /* Transparência: 30% */
+    }
+
+    /* Margem para primeira imagem (à esquerda) */
+    .bloqueador-container:nth-child(odd) img {
+      margin-right: 10px; /* Espaço à direita da imagem */
+    }
+
+    /* Margem para segunda imagem (à direita) */
+    .bloqueador-container:nth-child(even) img {
+      margin-left: 10px; /* Espaço à esquerda da imagem */
+    }
+
+    /* Estilo do iframe (YouTube) */
+    .bloqueador-container:nth-child(3) iframe {
+      max-width: 300px; /* Tamanho do vídeo */
+      height: 300px;
+      border-radius: 5px;
+      margin-right: 10px; /* Espaço à direita do iframe */
+      opacity: 0.7; /* Transparência: 30% */
+    }
+
+    /* Efeito de hover para imagens e iframe */
+    .suporte-container img:hover,
+    .suporte-container iframe:hover {
+      transform: scale(1.05);
+      opacity: 1; /* Remove transparência no hover */
+    }
+
+    /* Caixa de texto */
+    .suporte-texto {
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      padding: 15px;
+      border-radius: 5px;
+      margin: 0 10px; /* Espaço entre imagem/vídeo e texto */
+      max-width: 400px; /* Largura da caixa de texto */
+      text-align: left;
+      opacity: 0.8; /* Transparência da caixa de texto: 20% */
+    }
+
+    /* Título do bloco */
+    .bloqueador-texto h3 {
+      font-size: 1.5em;
+      margin: 0 0 10px; /* Espaço abaixo do título */
+      text-transform: uppercase;
+    }
+
+    /* Descrição do bloco */
+    .bloqueador-texto p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    /* Estilo para "Clique no Link" */
+    .clique-no-links {
+      color: red; /* Vermelho */
+      font-weight: normal; /* Sem negrito */
+    }
+
+    /* Estilo para o link do vídeo */
+    .video-link {
+      display: inline-block; /* Para alinhar com o botão */
+      color: #ffffff;
+      text-decoration: underline;
+      font-size: 1em;
+      margin-top: 10px; /* Espaço acima do link */
+      margin-right: 10px; /* Espaço entre link e botão */
+      text-align: left;
+    }
+    .video-link:hover {
+      color: #aaaaaa;
+    }
+
+    /* Estilo para o botão de copiar */
+    .copy-button {
+      padding: 5px 10px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .copy-button:hover {
+      background-color: #aaaaaa;
+    }
+
+    /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
+    .bloqueador-container:nth-child(odd) {
+      flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
+      justify-content: flex-start; /* Alinha à esquerda do layout */
+    }
+
+    /* Alinhamento: segunda imagem à direita, texto à esquerda */
+    .bloqueador-container:nth-child(even) {
+      flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
+      justify-content: flex-end; /* Alinha à direita do layout */
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+      .bloqueador-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .bloqueador-texto {
+        margin: 10px 0;
+        max-width: 90%;
+      }
+      .bloqueador-container img,
+      .bloqueador-container iframe {
+        margin: 0; /* Remove margens laterais em telas pequenas */
+      }
+      .video-link,
+      .copy-button {
+        text-align: center;
+        display: block; /* Empilha verticalmente em telas pequenas */
+        margin: 10px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="empresa.html">Empresa</a></li>
+      <li><a href="index.html">Clientes</a></li>
+      <li><a href="index.html">Parceiros</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Seção Bloqueador -->
+  <section id="bloqueador">
+    <h1>Bloqueador de Circuitos de Base Fusível</h1>
+
+    <!-- Primeiro Bloco: Imagem à esquerda, texto à direita -->
+    <div class="bloqueador-container">
+      <a href="#bloqueador">
+        <img src="bloqueador1.jpeg" alt="Suporte Imagem 1">
+      </a>
+      <div class="bloqueador-texto">
+        <h3>DETALHE DO BLOQUEADOR</h3>
+        <p>O Bloqueador de Circuitos de Base Fusivel, foi desenvolvido a partir de uma necessidade da EDP-ES, para realmente atender a NR-10, quando se trata de desenergização, pois para EDP-ES a rede só é considerada desenergizada, quando os 5 passos da NR-10 são feitos, eles são: 1- Desligar, 2- Impedir a Reenergização (o que o bloqueador da INOVAÇÃO BARCELLOS faz com excelência, pois é o único equipamento do mercado que sem a chave de instalação e remoção a distância, sua retirada só pode ser feita ao contato com equipe de linha viva), 3- Testar, 4- Aterrar e 5-Sinalizar. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que impede o religamento da rede acidentalmente ou propositalmente em redes desenergizada, a instalação do bloqueador é feita no método à distância, onde é possível ser feita sua instalação e remoção com segurança. O Bloqueador de Circuitos já foi testado, aprovado e homologado na EDP.</p>
+      </div>
+    </div>
+
+    <!-- Segundo Bloco: Imagem à direita, texto à esquerda -->
+    <div class="bloqueador-container">
+      <a href="#bloqueador">
+        <img src="bloqueador2.jpeg" alt="Suporte Imagem 2">
+      </a>
+      <div class="suporte-texto">
+        <h3>FUNCIONALIDADE DO SUPORTE</h3>
+        <p>Construido para ser de fácil instalação e remoção, o Bloqueador de Circuito de Base Fusivel, é leve, pesa menos de 250 gramas, tem um sistema anti-queda, é resitente as interpéries e ainda pode ser usado para suspensão do fornecimento de clientes atendidos em Média Tensão.</p>
+      </div>
+    </div>
+
+    <!-- Terceiro Bloco: Vídeo à esquerda, texto à direita -->
+    <div class="bloqueador-container">
+      <a href="https://youtu.be/3jCjy4S1dL4" target="_blank">
+        <iframe src="https://www.youtube.com/embed/3jCjy4S1dL4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </a>
+      <div class="suporte-texto">
+        <h3>DEMONSTRAÇÃO EM VÍDEO</h3>
+        <p>Vídeo mostrando o Bloqueador de Circuitos sendo instalado por um eletricista pela primeira vez, demonstrando sua facilidade na instalação. <span class="clique-no-links">Clique no Link.</span></p>
+        <a href="https://youtu.be/3jCjy4S1dL4" class="video-link" target="_blank">Assista no YouTube: https://youtu.be/3jCjy4S1dL4</a>
+        <button class="copy-button" onclick="copyLink()">Copiar Link</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript para copiar o link -->
+  <script>
+    function copyLink() {
+      const link = "https://youtu.be/3jCjy4S1dL4";
+      navigator.clipboard.writeText(link).then(() => {
+        alert("Link copiado para a área de transferência!");
+      });
+    }
+  </script>
+</body>
+</html>
