@@ -9,15 +9,15 @@
   <style>
     body {
       background-image: url('inovacao.jpg');
-      background-size: cover;
-      background-position: center 10px;
+      background-size: contain; /* Exibe a imagem inteira, sem cortes */
+      background-position: center; /* Centraliza a imagem */
       background-repeat: no-repeat;
       background-attachment: scroll; /* Fundo rola com o conteúdo */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 100vh; /* Altura mínima da tela */
+      min-height: 200vh; /* Aumenta a altura para permitir rolagem */
     }
 
     /* Barra de navegação */
@@ -53,7 +53,7 @@
     section {
       padding: 80px 20px 100px;
       position: relative; /* Contêiner de referência para position: absolute */
-      height: 100vh; /* Limita a altura para evitar expansão do body */
+      min-height: 100vh; /* Altura mínima para ocupar a tela */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -67,11 +67,11 @@
       padding: 20px;
       border-radius: 5px;
       font-size: 2.5em;
-      position: absolute; /* Posicionamento independente do layout */
-      top: 550px; /* Ajuste a posição vertical (ex.: 10%, 30%, 100px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento horizontal */
-      margin: 0; /* Remove margens para evitar impacto no layout */
+      position: absolute;
+      top: 20%; /* Ajuste a posição vertical (ex.: 10%, 30%, 100px) */
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
     }
 
     /* Estilo dos parágrafos */
@@ -79,23 +79,23 @@
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
-      font-size: 2em;
+      font-size: 1.7em;
       max-width: 700px;
-      position: absolute; /* Posicionamento independente */
-      top: 620px; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento */
-      margin: 0; /* Remove margens */
+      position: absolute;
+      top: 30%; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
       color: #aaaaaa;
     }
 
     /* Estilo dos links de contato */
     .contact-info {
-      position: absolute; /* Posicionamento independente */
-      top: 50%; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%); /* Corrige deslocamento */
-      margin: 0; /* Remove margens */
+      position: absolute;
+      top: 45%; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
     }
     .contact-info a {
       color: #ffffff;
@@ -120,16 +120,16 @@
     /* Responsividade para telas menores */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2.5em;
-        top: 15%; /* Ajuste para telas menores */
+        font-size: 2em;
+        top: 15%;
       }
       p.accent {
         font-size: 1em;
         max-width: 90%;
-        top: 30%; /* Ajuste para telas menores */
+        top: 25%;
       }
       .contact-info {
-        top: 45%; /* Ajuste para telas menores */
+        top: 40%;
       }
       section {
         padding: 60px 10px 80px;
