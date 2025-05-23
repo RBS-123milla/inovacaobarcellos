@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 135vh; /* Aumentado para mais rolagem */
+      min-height: 135vh; /* Mantido para PC, não alterar */
     }
 
     /* Barra de navegação */
@@ -105,49 +105,91 @@
       margin-left: 5px;
     }
 
-    /* Responsividade para telas menores */
-    @media (max-width: 480px) {
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
+    @media (max-width: 768px) {
       body {
-        background-size: cover; /* Preenche toda a tela */
+        background-size: cover; /* Preenche a tela, ajuste aqui se quiser */
         background-position: center top; /* Foca no topo */
-        background-repeat: repeat-y; /* Repete verticalmente para cobrir rolagem */
+        background-repeat: repeat-y; /* Repete verticalmente para rolagem */
+        /* Para ajustar o tamanho da imagem, teste:
+           - background-size: contain; (mostra imagem inteira, pode deixar bordas)
+           - background-size: 100% auto; (preenche largura, altura proporcional)
+           - background-size: 150% auto; (aumenta imagem, foca na largura) */
+      }
+      section {
+        min-height: 150vh; /* Mais rolagem no celular */
+        padding: 40px 10px 60px; /* Menos espaço */
       }
       nav ul {
-        flex-wrap: wrap; /* Garante que botões quebrem linha */
+        flex-wrap: wrap; /* Mantido, você disse que botões estão perfeitos */
       }
       nav ul li {
-        margin: 5px 10px; /* Menos espaço entre botões */
+        margin: 5px 10px; /* Mantido, botões ok */
       }
       nav ul li a {
-        font-size: 0.9em; /* Botões menores */
+        font-size: 0.9em; /* Mantido, botões ok */
       }
       p.accent {
         font-size: 0.9em; /* Texto menor */
         max-width: 90%; /* Evita transbordo */
-        top: 80%; /* Posição mais alta */
+        top: 10%; /* Posição inicial, ajuste aqui */
+        margin: 0; /* Ajuste margens se quiser, ex.: margin-top: 20px; */
+        /* Para ajustar posição no celular:
+           - top: 5%; (mais alto)
+           - top: 15%; (mais baixo)
+           - margin-top: 10px; (espaço extra acima)
+           - margin-bottom: 20px; (espaço abaixo) */
       }
       .contact-info {
-        top: 30%; /* Posição mais alta */
-      }
-      section {
-        padding: 40px 10px 60px; /* Menos espaço */
+        top: 25%; /* Posição inicial, ajuste aqui */
+        margin: 0; /* Ajuste margens se quiser */
+        /* Para ajustar posição no celular:
+           - top: 20%; (mais alto)
+           - top: 30%; (mais baixo)
+           - margin-top: 15px; (espaço acima)
+           - margin-bottom: 15px; (espaço abaixo) */
       }
     }
 
-    /* Ajustes para celulares muito pequenos */
+    /* Responsividade para telas até 480px (celulares pequenos) */
     @media (max-width: 480px) {
-      p.accent {
-        font-size: 0.8em;
-        top: 10%; /* Ainda mais alto */
+      body {
+        background-size: cover; /* Preenche a tela, ajuste aqui se quiser */
+        background-position: center top;
+        background-repeat: repeat-y;
+        /* Para ajustar o tamanho da imagem, teste:
+           - background-size: contain;
+           - background-size: 100% auto;
+           - background-size: 150% auto; */
       }
-      .contact-info {
-        top: 95%; /* Ainda mais alto */
+      section {
+        min-height: 150vh; /* Mais rolagem */
+        padding: 40px 10px 60px;
       }
       nav ul li {
-        margin: 5px 8px;
+        margin: 5px 8px; /* Ajuste fino, botões ok */
       }
       nav ul li a {
-        font-size: 0.8em;
+        font-size: 0.8em; /* Ajuste fino, botões ok */
+      }
+      p.accent {
+        font-size: 0.8em; /* Texto ainda menor */
+        top: 8%; /* Posição inicial, ajuste aqui */
+        margin: 0; /* Ajuste margens se quiser */
+        /* Para ajustar posição:
+           - top: 5%; (mais alto)
+           - top: 12%; (mais baixo)
+           - margin-top: 10px;
+           - margin-bottom: 10px; */
+      }
+      .contact-info {
+        top: 20%; /* Posição inicial, ajuste aqui */
+        margin: 0; /* Ajuste margens se quiser */
+        /* Para ajustar posição:
+           - top: 15%; (mais alto)
+           - top: 25%; (mais baixo)
+           - margin-top: 10px;
+           - margin-bottom: 10px; */
       }
     }
   </style>
