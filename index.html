@@ -10,13 +10,16 @@
     body {
       background-image: url('inovacao.jpg');
       background-size: cover;
-      background-position: center -50px;
+      background-position: center;
       background-repeat: no-repeat;
+      background-attachment: fixed; /* Fundo fixo durante a rolagem */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
+      min-height: 100vh; /* Garante altura mínima da tela, permite rolagem */
     }
+
     /* Barra de navegação */
     nav {
       background-color: rgba(0, 0, 0, 0.8);
@@ -45,29 +48,40 @@
     nav ul li a:hover {
       color: #aaaaaa;
     }
+
     /* Seções */
     section {
-      padding: 10px 10px 10px;
-      height: 90vh;
+      padding: 80px 20px 100px; /* Aumentado para espaço na rolagem */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
     }
-    h1, h2 {
+
+    /* Estilo do título principal */
+    h1 {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       border-radius: 5px;
-    }
-    h1 {
-      font-size: 4.0em;
+      font-size: 4em;
       margin-bottom: 0.5em;
+      margin-left: 0; /* Ajuste para mover à esquerda/direita (ex.: 50px, -50px) */
+      margin-top: 0; /* Ajuste para mover para cima/baixo (ex.: 20px, -20px) */
     }
+
+    /* Estilo do subtítulo */
     h2 {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
       font-size: 4em;
       margin-bottom: 1em;
+      margin-left: 0; /* Ajuste para mover à esquerda/direita */
+      margin-top: 0; /* Ajuste para mover para cima/baixo */
     }
+
+    /* Estilo dos parágrafos */
     p {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
@@ -75,15 +89,21 @@
       font-size: 1.2em;
       max-width: 700px;
       margin: 10px 0;
+      margin-left: 0; /* Ajuste para mover à esquerda/direita */
+      margin-top: 0; /* Ajuste para mover para cima/baixo */
     }
     p.accent {
       color: #aaaaaa;
     }
-    /* Links na seção Home */
+
+    /* Estilo dos links de contato */
+    .contact-info {
+      margin-left: 0; /* Ajuste para mover à esquerda/direita */
+      margin-top: 20px; /* Ajuste para mover para cima/baixo */
+    }
     .contact-info a {
-      color: #ffffff; /* Branco por padrão */
+      color: #ffffff;
       text-decoration: none;
-      /* Para vermelho, substitua por: color: #ff0000; */
     }
     .contact-info a:hover {
       color: #aaaaaa;
@@ -96,6 +116,23 @@
       width: 20px;
       vertical-align: middle;
       margin-left: 5px;
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+        max-width: 90%;
+      }
+      section {
+        padding: 60px 10px 80px;
+      }
     }
   </style>
 </head>
@@ -112,10 +149,10 @@
     </ul>
   </nav>
 
-  <!-- Seção Home (manutenção) -->
+  <!-- Seção Home -->
   <section id="home">
     <h1>AGUARDEM</h1>
-    <p class="accent">Nosso site está em manutenção. Em breve, novidades!</p>
+    <p class="accent">Conheça um pouco mais da Empresa. Em breve, novos lançamentos!</p>
     <div class="contact-info">
       <p>E-mail: <a href="mailto:contato@inovacaobarcellos.com.br">contato@inovacaobarcellos.com.br</a></p>
       <p>WhatsApp: <a href="https://wa.me/5527997223150">(27) 99722-3150 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></p>
