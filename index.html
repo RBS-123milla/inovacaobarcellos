@@ -12,12 +12,12 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: scroll; /* Fundo fixo durante a rolagem */
+      background-attachment: scroll; /* Fundo rola com o conteúdo */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 100vh; /* Garante altura mínima da tela, permite rolagem */
+      min-height: 100vh; /* Altura mínima da tela */
     }
 
     /* Barra de navegação */
@@ -51,7 +51,9 @@
 
     /* Seções */
     section {
-      padding: 80px 20px 100px; /* Aumentado para espaço na rolagem */
+      padding: 80px 20px 100px;
+      position: relative; /* Contêiner de referência para position: absolute */
+      height: 100vh; /* Limita a altura para evitar expansão do body */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -65,41 +67,35 @@
       padding: 20px;
       border-radius: 5px;
       font-size: 4em;
-      margin-bottom: 0.5em;
-      margin-left: 0; /* Ajuste para mover à esquerda/direita (ex.: 50px, -50px) */
-      margin-top: 1500; /* Ajuste para mover para cima/baixo (ex.: 20px, -20px) */
-    }
-
-    /* Estilo do subtítulo */
-    h2 {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 5px;
-      font-size: 4em;
-      margin-bottom: 1em;
-      margin-left: 0; /* Ajuste para mover à esquerda/direita */
-      margin-top: 1600; /* Ajuste para mover para cima/baixo */
+      position: absolute; /* Posicionamento independente do layout */
+      top: 20%; /* Ajuste a posição vertical (ex.: 10%, 30%, 100px) */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento horizontal */
+      margin: 0; /* Remove margens para evitar impacto no layout */
     }
 
     /* Estilo dos parágrafos */
-    p {
+    p.accent {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
       font-size: 1.2em;
       max-width: 700px;
-      margin: 10px 0;
-      margin-left: 0; /* Ajuste para mover à esquerda/direita */
-      margin-top: 800px; /* Ajuste para mover para cima/baixo */
-    }
-    p.accent {
+      position: absolute; /* Posicionamento independente */
+      top: 35%; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento */
+      margin: 0; /* Remove margens */
       color: #aaaaaa;
     }
 
     /* Estilo dos links de contato */
     .contact-info {
-      margin-left: 0; /* Ajuste para mover à esquerda/direita */
-      margin-top: 420px; /* Ajuste para mover para cima/baixo */
+      position: absolute; /* Posicionamento independente */
+      top: 50%; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento */
+      margin: 0; /* Remove margens */
     }
     .contact-info a {
       color: #ffffff;
@@ -111,6 +107,9 @@
     .contact-info p {
       display: inline-block;
       margin: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
     }
     .whatsapp-icon {
       width: 20px;
@@ -122,13 +121,15 @@
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5em;
+        top: 15%; /* Ajuste para telas menores */
       }
-      h2 {
-        font-size: 2em;
-      }
-      p {
+      p.accent {
         font-size: 1em;
         max-width: 90%;
+        top: 30%; /* Ajuste para telas menores */
+      }
+      .contact-info {
+        top: 45%; /* Ajuste para telas menores */
       }
       section {
         padding: 60px 10px 80px;
@@ -152,7 +153,7 @@
   <!-- Seção Home -->
   <section id="home">
     <h1>AGUARDEM</h1>
-    <p class="accent">Conheça um pouco mais da Empresa. Em breve, NOVOS LANÇAMENTOS!</p>
+    <p class="accent">E conheça um pouco mais da Empresa. Em breve, NOVOS LANÇAMENTOS!</p>
     <div class="contact-info">
       <p>E-mail: <a href="mailto:contato@inovacaobarcellos.com.br">contato@inovacaobarcellos.com.br</a></p>
       <p>WhatsApp: <a href="https://wa.me/5527997223150">(27) 99722-3150 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></p>
