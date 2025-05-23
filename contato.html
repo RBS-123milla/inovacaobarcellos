@@ -73,9 +73,8 @@
     }
     /* Links na seção Contato */
     .contact-info a {
-      color: #ffffff; /* Branco por padrão */
+      color: #ffffff;
       text-decoration: none;
-      /* Para vermelho, substitua por: color: #ff0000; */
     }
     .contact-info a:hover {
       color: #aaaaaa;
@@ -94,15 +93,9 @@
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px; /* Tamanho padrão do formulário */
+      max-width: 500px;
       width: 100%;
       text-align: left;
-      /* Ajuste da posição:
-         - Centro (padrão): Mantém align-items: center na section
-         - Esquerda: Adicione margin-left: 40px; margin-right: auto;
-         - Direita: Adicione margin-left: auto; margin-right: 40px;
-         - Ajuste do tamanho: Mude max-width (ex.: 300px para menor, 700px para maior)
-      */
     }
     .contact-form label {
       display: block;
@@ -137,10 +130,100 @@
     .contact-form button:hover {
       background-color: #aaaaaa;
     }
-    /* Responsividade */
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
     @media (max-width: 768px) {
+      body {
+        background-size: cover; /* Ajusta imagem, teste: contain, 100% auto */
+        background-position: center 50px; /* Igual ao index.html */
+        background-repeat: no-repeat;
+        background-color: black; /* Fundo preto em todas as orientações */
+        height: 100vh; /* Altura fixa, sem rolagem */
+      }
+      section {
+        margin-top: 60px; /* Ajusta para navegação fixa */
+        height: 100vh; /* Igual à viewport */
+        padding: 40px 10px 60px; /* Igual ao index.html */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Igual ao index.html */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Igual ao index.html */
+      }
+      h2 {
+        font-size: 2em; /* Menor para caber */
+      }
+      p {
+        font-size: 1em; /* Menor para caber */
+        max-width: 90%; /* Evita transbordo */
+      }
+      .contact-info p {
+        font-size: 0.9em; /* Ajusta links */
+        margin: 5px 5px; /* Menor margem */
+      }
       .contact-form {
-        max-width: 90%;
+        max-width: 90%; /* Ajusta largura */
+        padding: 15px; /* Menor padding */
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 8px; /* Menor input */
+        font-size: 0.9em; /* Menor texto */
+      }
+      .contact-form textarea {
+        height: 80px; /* Menor textarea */
+      }
+      .contact-form button {
+        padding: 8px 16px; /* Menor botão */
+        font-size: 0.9em; /* Menor texto */
+      }
+    }
+    /* Responsividade para telas até 480px (celulares pequenos) */
+    @media (max-width: 480px) {
+      body {
+        background-size: 100%; /* Igual ao index.html */
+        background-position: center 50px;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 100vh;
+      }
+      section {
+        margin-top: 50px; /* Ajusta para navegação */
+        padding: 40px 10px 60px;
+      }
+      nav ul li {
+        margin: 5px 8px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.8em; /* Igual ao index.html */
+      }
+      h2 {
+        font-size: 1.5em; /* Ainda menor */
+      }
+      p {
+        font-size: 0.9em; /* Ainda menor */
+      }
+      .contact-info p {
+        font-size: 0.8em; /* Menor ainda */
+      }
+      .contact-form {
+        max-width: 95%; /* Mais estreito */
+        padding: 10px; /* Menor padding */
+      }
+      .contact-form input,
+      .contact-form textarea {
+        padding: 6px; /* Menor input */
+        font-size: 0.8em; /* Menor texto */
+      }
+      .contact-form textarea {
+        height: 60px; /* Menor textarea */
+      }
+      .contact-form button {
+        padding: 6px 12px; /* Menor botão */
+        font-size: 0.8em; /* Menor texto */
       }
     }
   </style>
