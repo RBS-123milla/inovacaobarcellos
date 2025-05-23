@@ -45,14 +45,14 @@
     }
     /* Conteúdo */
     .content {
-      padding: 80px 20px; /* Ajustado para consistência com index.html */
+      padding: 80px 20px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start; /* Alinha o conteúdo à esquerda */
-      max-width: 600px; /* Largura da "janela" */
-      margin-left: 40px; /* Margem à esquerda para não encostar na borda */
+      align-items: flex-start;
+      max-width: 600px;
+      margin-left: 40px;
     }
     h2 {
       background-color: rgba(0, 0, 0, 0.5);
@@ -60,15 +60,15 @@
       border-radius: 5px;
       font-size: 2em;
       margin-bottom: 1em;
-      text-align: left; /* Alinha o título à esquerda */
+      text-align: left;
     }
     p {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
       font-size: 1.2em;
-      margin: 10px 0; /* Mantém o espaçamento entre parágrafos */
-      text-align: left; /* Alinha o texto à esquerda */
+      margin: 10px 0;
+      text-align: left;
     }
     a.cta {
       display: inline-block;
@@ -83,15 +83,73 @@
     a.cta:hover {
       background-color: #aaaaaa;
     }
-    /* Responsividade para telas menores */
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
     @media (max-width: 768px) {
-      .content {
-        max-width: 90%; /* Ajusta a largura em celulares */
-        margin-left: 20px; /* Reduz margem em telas pequenas */
-        align-items: center; /* Centraliza em celulares, se preferir */
+      body {
+        background-size: cover; /* Ajusta imagem, teste: contain, 100% auto */
+        background-position: center 50px; /* Igual ao index.html */
+        background-repeat: no-repeat;
+        background-color: black; /* Fundo preto em todas as orientações */
+        height: 100vh; /* Altura fixa, sem rolagem */
+        overflow-y: hidden; /* Remove rolagem */
       }
-      h2, p {
-        text-align: center; /* Opcional: centraliza texto em celulares */
+      .content {
+        max-width: 90%; /* Ajusta largura */
+        margin: 0 auto; /* Centraliza */
+        padding: 40px 10px 60px; /* Igual ao index.html */
+        align-items: center; /* Centraliza conteúdo */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Igual ao index.html */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Igual ao index.html */
+      }
+      h2 {
+        font-size: 1.5em; /* Menor para caber */
+        text-align: center; /* Centraliza */
+      }
+      p {
+        font-size: 1em; /* Menor para caber */
+        text-align: center; /* Centraliza */
+      }
+      a.cta {
+        font-size: 0.9em; /* Ajusta botão */
+        padding: 8px 16px; /* Menor */
+      }
+    }
+    /* Responsividade para telas até 480px (celulares pequenos) */
+    @media (max-width: 480px) {
+      body {
+        background-size: 100%; /* Igual ao index.html */
+        background-position: center 50px;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 100vh;
+        overflow-y: hidden;
+      }
+      .content {
+        max-width: 95%; /* Mais estreito */
+        padding: 40px 10px 60px;
+      }
+      nav ul li {
+        margin: 5px 8px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.8em; /* Igual ao index.html */
+      }
+      h2 {
+        font-size: 1.2em; /* Ainda menor */
+      }
+      p {
+        font-size: 0.9em; /* Ainda menor */
+      }
+      a.cta {
+        font-size: 0.8em; /* Ajusta botão */
+        padding: 6px 12px; /* Menor */
       }
     }
   </style>
@@ -111,11 +169,11 @@
 
   <!-- Conteúdo Empresa -->
   <div class="content">
-  <h2>Sobre a Inovação Barcellos</h2>
-  <p>Fundada em 2024, a <strong>Inovação Barcellos</strong> é uma empresa dedicada ao desenvolvimento de soluções técnicas personalizadas, atendendo às necessidades específicas de clientes que demandam inovação em pequena escala ou customizações exclusivas. Nosso propósito é superar as limitações impostas pelos altos custos de fornecedores tradicionais, oferecendo projetos sob medida que integram <strong>produtividade</strong>, <strong>segurança</strong> e <strong>ergonomia</strong> ao ambiente de trabalho. Com uma abordagem centrada no cliente, transformamos conceitos em realidades funcionais, garantindo excelência técnica e valor agregado para otimizar processos e promover ambientes de trabalho mais eficientes e seguros.</p>
-  <p>Guiados por princípios de <strong>confidencialidade</strong>, <strong>ética</strong> e <strong>compromisso</strong>, projetamos e entregamos protótipos e produtos finais que aliam tecnologia avançada a funcionalidades práticas. Nosso diferencial reside na dedicação em compreender e materializar as visões de nossos clientes, criando soluções que elevam a eficiência operacional e o bem-estar nos ambientes corporativos.</p>
-  <p><strong>Nosso propósito</strong>: Proporcionar excelência no atendimento e resultados que superem as expectativas, construindo parcerias de confiança.</p>
-  <p>Se sua empresa busca soluções inovadoras para desafios específicos, <a href="contato.html#contato" class="cta">entre em contato</a> e junte-se a nós como parceiro na criação de um futuro mais eficiente e seguro!</p>
-</div>
+    <h2>Sobre a Inovação Barcellos</h2>
+    <p>Fundada em 2024, a <strong>Inovação Barcellos</strong> é uma empresa dedicada ao desenvolvimento de soluções técnicas personalizadas, atendendo às necessidades específicas de clientes que demandam inovação em pequena escala ou customizações exclusivas. Nosso propósito é superar as limitações impostas pelos altos custos de fornecedores tradicionais, oferecendo projetos sob medida que integram <strong>produtividade</strong>, <strong>segurança</strong> e <strong>ergonomia</strong> ao ambiente de trabalho. Com uma abordagem centrada no cliente, transformamos conceitos em realidades funcionais, garantindo excelência técnica e valor agregado para otimizar processos e promover ambientes de trabalho mais eficientes e seguros.</p>
+    <p>Guiados por princípios de <strong>confidencialidade</strong>, <strong>ética</strong> e <strong>compromisso</strong>, projetamos e entregamos protótipos e produtos finais que aliam tecnologia avançada a funcionalidades práticas. Nosso diferencial reside na dedicação em compreender e materializar as visões de nossos clientes, criando soluções que elevam a eficiência operacional e o bem-estar nos ambientes corporativos.</p>
+    <p><strong>Nosso propósito</strong>: Proporcionar excelência no atendimento e resultados que superem as expectativas, construindo parcerias de confiança.</p>
+    <p>Se sua empresa busca soluções inovadoras para desafios específicos, <a href="contato.html#contato" class="cta">entre em contato</a> e junte-se a nós como parceiro na criação de um futuro mais eficiente e seguro!</p>
+  </div>
 </body>
 </html>
