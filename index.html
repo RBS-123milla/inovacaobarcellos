@@ -9,15 +9,15 @@
   <style>
     body {
       background-image: url('inovacao.jpg');
-      background-size: contain; /* Exibe a imagem inteira, sem cortes */
-      background-position: center; /* Centraliza a imagem */
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
       background-attachment: scroll; /* Fundo rola com o conteúdo */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 200vh; /* Aumenta a altura para permitir rolagem */
+      min-height: 120vh; /* Altura mínima da tela */
     }
 
     /* Barra de navegação */
@@ -53,7 +53,7 @@
     section {
       padding: 80px 20px 100px;
       position: relative; /* Contêiner de referência para position: absolute */
-      min-height: 100vh; /* Altura mínima para ocupar a tela */
+      height: 100vh; /* Limita a altura para evitar expansão do body */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -67,11 +67,11 @@
       padding: 20px;
       border-radius: 5px;
       font-size: 2.5em;
-      position: absolute;
+      position: absolute; /* Posicionamento independente do layout */
       top: 20%; /* Ajuste a posição vertical (ex.: 10%, 30%, 100px) */
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento horizontal */
+      margin: 550px; /* Remove margens para evitar impacto no layout */
     }
 
     /* Estilo dos parágrafos */
@@ -79,23 +79,23 @@
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       border-radius: 5px;
-      font-size: 1.7em;
+      font-size: 1.8em;
       max-width: 700px;
-      position: absolute;
-      top: 30%; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
+      position: absolute; /* Posicionamento independente */
+      top: 35%; /* Ajuste a posição vertical (ex.: 40%, 50%, 200px) */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento */
+      margin: 600px; /* Remove margens */
       color: #aaaaaa;
     }
 
     /* Estilo dos links de contato */
     .contact-info {
-      position: absolute;
-      top: 45%; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
+      position: absolute; /* Posicionamento independente */
+      top: 50%; /* Ajuste a posição vertical (ex.: 60%, 70%, 300px) */
+      left: 50%; /* Centraliza horizontalmente */
+      transform: translateX(-50%); /* Corrige deslocamento */
+      margin: 400px; /* Remove margens */
     }
     .contact-info a {
       color: #ffffff;
@@ -120,16 +120,16 @@
     /* Responsividade para telas menores */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2em;
-        top: 15%;
+        font-size: 2.5em;
+        top: 15%; /* Ajuste para telas menores */
       }
       p.accent {
         font-size: 1em;
         max-width: 90%;
-        top: 25%;
+        top: 30%; /* Ajuste para telas menores */
       }
       .contact-info {
-        top: 40%;
+        top: 45%; /* Ajuste para telas menores */
       }
       section {
         padding: 60px 10px 80px;
@@ -153,7 +153,7 @@
   <!-- Seção Home -->
   <section id="home">
     <h1>AGUARDEM</h1>
-    <p class="accent">E conheça um pouco mais da Empresa. Em breve, NOVOS LANÇAMENTOS!</p>
+    <p class="accent">Conheça um pouco mais da Empresa. Em breve, NOVOS LANÇAMENTOS!</p>
     <div class="contact-info">
       <p>E-mail: <a href="mailto:contato@inovacaobarcellos.com.br">contato@inovacaobarcellos.com.br</a></p>
       <p>WhatsApp: <a href="https://wa.me/5527997223150">(27) 99722-3150 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"></a></p>
