@@ -17,7 +17,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       text-align: center;
-      min-height: 150vh; /* Aumentado para mais rolagem */
+      min-height: 200vh; /* Aumentado para mais rolagem */
     }
 
     /* Barra de navegação */
@@ -35,6 +35,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap; /* Permite quebra de linha se necessário */
     }
     nav ul li {
       margin: 0 20px;
@@ -107,30 +108,46 @@
     /* Responsividade para telas menores */
     @media (max-width: 768px) {
       body {
-        background-size: 100% auto; /* Preenche largura, mantém proporção */
-        background-position: center top; /* Foca no topo da imagem */
+        background-size: cover; /* Preenche toda a tela */
+        background-position: center top; /* Foca no topo */
+        background-repeat: repeat-y; /* Repete verticalmente para cobrir rolagem */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Garante que botões quebrem linha */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Menos espaço entre botões */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Botões menores */
       }
       p.accent {
-        font-size: 1em; /* Texto menor */
+        font-size: 0.9em; /* Texto menor */
         max-width: 90%; /* Evita transbordo */
-        top: 25%; /* Posição ajustada para celular */
+        top: 15%; /* Posição mais alta */
       }
       .contact-info {
-        top: 40%; /* Posição ajustada para celular */
+        top: 30%; /* Posição mais alta */
       }
       section {
-        padding: 40px 10px 60px; /* Menos espaço no celular */
+        padding: 40px 10px 60px; /* Menos espaço */
       }
     }
 
     /* Ajustes para celulares muito pequenos */
     @media (max-width: 480px) {
       p.accent {
-        font-size: 0.9em;
-        top: 20%; /* Mais para cima */
+        font-size: 0.8em;
+        top: 10%; /* Ainda mais alto */
       }
       .contact-info {
-        top: 35%; /* Mais para cima */
+        top: 25%; /* Ainda mais alto */
+      }
+      nav ul li {
+        margin: 5px 8px;
+      }
+      nav ul li a {
+        font-size: 0.8em;
       }
     }
   </style>
