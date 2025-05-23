@@ -131,8 +131,9 @@
         background-position: center 50px; /* Igual ao index.html */
         background-repeat: no-repeat;
         background-color: black; /* Fundo preto em todas as orientações */
-        height: 130vh; /* Altura fixa, sem rolagem */
-        background-attachment: fixed; /* Fundo rola, igual ao index.html */
+        height: 100vh; /* Altura fixa, sem rolagem */
+        overflow-y: hidden; /* Remove rolagem */
+        background-attachment: scroll; /* Fundo rola, igual ao index.html */
       }
       section#projetos {
         padding: 60px 10px 20px; /* Ajusta para navegação fixa */
@@ -179,8 +180,9 @@
         background-position: center 50px;
         background-repeat: no-repeat;
         background-color: black;
-        height: 130vh;
-        background-attachment: fixed;
+        height: 100vh;
+        overflow-y: hidden;
+        background-attachment: scroll;
       }
       section#projetos {
         padding: 50px 10px 20px; /* Ajusta ainda mais */
