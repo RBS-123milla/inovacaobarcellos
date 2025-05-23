@@ -12,7 +12,7 @@
       background-size: cover;
       background-position: center -100px;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* Fundo fixo, não rola com o conteúdo (AJUSTE AQUI) */
+      background-attachment: fixed; /* Fundo fixo, não rola com o conteúdo */
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -51,7 +51,7 @@
 
     /* Seção de projetos */
     section#projetos {
-      padding: 80px 5px 20px; /* Padding lateral reduzido para máxima proximidade às margens (AJUSTE AQUI) */
+      padding: 80px 5px 20px; /* Padding lateral reduzido */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,10 +62,10 @@
     .projeto-container {
       display: flex;
       align-items: center;
-      margin-bottom: 100px; /* Espaço entre projetos (AJUSTE AQUI) */
+      margin-bottom: 100px; /* Espaço entre projetos */
       width: 100%;
-      max-width: 1600px; /* Aumentado para aproximar das margens (AJUSTE AQUI) */
-      padding: 0 5px; /* Espaço lateral interno (AJUSTE AQUI) */
+      max-width: 1600px; /* Aumentado para margens */
+      padding: 0 5px; /* Espaço lateral interno */
     }
 
     /* Estilo das imagens */
@@ -74,13 +74,13 @@
       height: 300px;
       border-radius: 5px;
       transition: transform 0.3s;
-      margin-right: 10px; /* Para imagens à esquerda (AJUSTE AQUI) */
-      margin-left: 10px; /* Para imagens à direita (AJUSTE AQUI) */
-      opacity: 0.7; /* Transparência: 70% (30% transparente). Ajuste para 0.9 (10%), 0.5 (50%), etc. (AJUSTE AQUI) */
+      margin-right: 10px; /* Para imagens à esquerda */
+      margin-left: 10px; /* Para imagens à direita */
+      opacity: 0.7; /* Transparência: 70% */
     }
     .projeto-container img:hover {
       transform: scale(1.05);
-      opacity: 1; /* Remove transparência no hover (AJUSTE AQUI, se desejar manter transparência) */
+      opacity: 1; /* Remove transparência no hover */
     }
 
     /* Caixa de texto */
@@ -88,7 +88,7 @@
       background-color: rgba(0, 0, 0, 0.5);
       padding: 15px;
       border-radius: 5px;
-      margin: 0 10px; /* Espaço entre imagem e texto (AJUSTE AQUI) */
+      margin: 0 10px; /* Espaço entre imagem e texto */
       max-width: 400px; /* Largura da caixa de texto */
       text-align: left;
     }
@@ -115,28 +115,94 @@
     /* Alinhamento para primeiro e terceiro projetos: imagem à direita, texto à esquerda */
     .projeto-container:nth-child(odd) {
       flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-      justify-content: flex-end; /* Alinha bem à direita da tela (AJUSTE AQUI) */
+      justify-content: flex-end; /* Alinha à direita */
     }
 
     /* Alinhamento para segundo projeto: imagem à esquerda, texto à direita */
     .projeto-container:nth-child(even) {
       flex-direction: row; /* Imagem à esquerda, texto à direita */
-      justify-content: flex-start; /* Alinha à esquerda do layout (AJUSTE AQUI) */
+      justify-content: flex-start; /* Alinha à esquerda */
     }
 
-    /* Responsividade para telas menores */
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
     @media (max-width: 768px) {
+      body {
+        background-size: cover; /* Ajusta imagem, teste: contain, 100% auto */
+        background-position: center 50px; /* Igual ao index.html */
+        background-repeat: no-repeat;
+        background-color: black; /* Fundo preto em todas as orientações */
+        height: 100vh; /* Altura fixa, sem rolagem */
+        background-attachment: fixed; /* Fundo rola, igual ao index.html */
+      }
+      section#projetos {
+        padding: 60px 10px 20px; /* Ajusta para navegação fixa */
+        height: 100vh; /* Igual à viewport */
+        overflow-y: hidden; /* Garante sem rolagem */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Igual ao index.html */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Igual ao index.html */
+      }
       .projeto-container {
-        flex-direction: column;
+        flex-direction: column; /* Empilha imagem e texto */
         align-items: center;
         text-align: center;
-      }
-      .projeto-texto {
-        margin: 10px 0;
-        max-width: 90%;
+        margin-bottom: 20px; /* Menor espaço entre projetos */
+        max-width: 90%; /* Ajusta largura */
       }
       .projeto-container img {
-        margin: 0; /* Remove margens laterais em telas pequenas */
+        max-width: 200px; /* Imagem menor */
+        height: 200px; /* Mantém proporção */
+        margin: 0; /* Remove margens laterais */
+      }
+      .projeto-texto {
+        margin: 10px 0; /* Espaço vertical */
+        max-width: 95%; /* Ajusta largura */
+        padding: 10px; /* Menor padding */
+      }
+      .projeto-texto h3 {
+        font-size: 1.2em; /* Título menor */
+      }
+      .projeto-texto p {
+        font-size: 0.9em; /* Texto menor */
+      }
+    }
+    /* Responsividade para telas até 480px (celulares pequenos) */
+    @media (max-width: 480px) {
+      body {
+        background-size: 100%; /* Igual ao index.html */
+        background-position: center 50px;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 100vh;
+        background-attachment: fixed;
+      }
+      section#projetos {
+        padding: 50px 10px 20px; /* Ajusta ainda mais */
+      }
+      nav ul li {
+        margin: 5px 8px; /* Igual ao index.html */
+      }
+      nav ul li a {
+        font-size: 0.8em; /* Igual ao index.html */
+      }
+      .projeto-container {
+        margin-bottom: 15px; /* Ainda menor */
+      }
+      .projeto-container img {
+        max-width: 150px; /* Imagem ainda menor */
+        height: 150px;
+      }
+      .projeto-texto h3 {
+        font-size: 1em; /* Título ainda menor */
+      }
+      .projeto-texto p {
+        font-size: 0.8em; /* Texto ainda menor */
       }
     }
   </style>
