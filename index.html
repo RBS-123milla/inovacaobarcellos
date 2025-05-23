@@ -110,6 +110,7 @@
       body {
         background-size: cover; /* Preenche a tela, ajuste aqui se quiser */
         background-position: center top; /* Foca no topo */
+        background-color: black;
         background-repeat: no-repeat; /* Repete verticalmente para rolagem */
         /* Para ajustar o tamanho da imagem, teste:
            - background-size: contain; (mostra imagem inteira, pode deixar bordas)
@@ -154,16 +155,17 @@
     /* Responsividade para telas até 480px (celulares pequenos) */
     @media (max-width: 480px) {
       body {
-        background-size: cover; /* Preenche a tela, ajuste aqui se quiser */
+        background-size: 90%; /* Preenche a tela, ajuste aqui se quiser */
         background-position: center top;
         background-repeat: no-repeat;
+        background-color: black;
         /* Para ajustar o tamanho da imagem, teste:
            - background-size: contain;
            - background-size: 100% auto;
            - background-size: 150% auto; */
       }
       section {
-        min-height: 100vh; /* Mais rolagem */
+        min-height: 90vh; /* Mais rolagem */
         padding: 40px 10px 60px;
       }
       nav ul li {
