@@ -131,13 +131,10 @@
         background-position: center 50px; /* Igual ao index.html */
         background-repeat: no-repeat;
         background-color: black; /* Fundo preto em todas as orientações */
-        height: 200vh; /* Altura fixa, sem rolagem */
         background-attachment: scroll; /* Fundo rola, igual ao index.html */
       }
       section#projetos {
-        padding: 60px 10px 20px; /* Ajusta para navegação fixa */
-        height: 100vh; /* Igual à viewport */
-        overflow-y: hidden; /* Garante sem rolagem */
+        padding: 40px 10px 10px; /* Reduz padding para liberar espaço */
       }
       nav ul {
         flex-wrap: wrap; /* Igual ao index.html */
@@ -152,24 +149,24 @@
         flex-direction: column; /* Empilha imagem e texto */
         align-items: center;
         text-align: center;
-        margin-bottom: 20px; /* Menor espaço entre projetos */
+        margin-bottom: 10px; /* Reduz espaço entre projetos */
         max-width: 90%; /* Ajusta largura */
       }
       .projeto-container img {
-        max-width: 200px; /* Imagem menor */
-        height: 200px; /* Mantém proporção */
+        max-width: 150px; /* Imagem menor */
+        height: 150px; /* Mantém proporção */
         margin: 0; /* Remove margens laterais */
       }
       .projeto-texto {
-        margin: 10px 0; /* Espaço vertical */
-        max-width: 95%; /* Ajusta largura */
-        padding: 10px; /* Menor padding */
+        margin: 5px 0; /* Menor espaço vertical */
+        max-width: 90%; /* Ajusta largura */
+        padding: 8px; /* Menor padding */
       }
       .projeto-texto h3 {
-        font-size: 1.2em; /* Título menor */
+        font-size: 1em; /* Título menor */
       }
       .projeto-texto p {
-        font-size: 0.9em; /* Texto menor */
+        font-size: 0.8em; /* Texto menor */
       }
     }
     /* Responsividade para telas até 480px (celulares pequenos) */
@@ -179,11 +176,10 @@
         background-position: center 50px;
         background-repeat: no-repeat;
         background-color: black;
-        height: 200vh;
         background-attachment: scroll;
       }
       section#projetos {
-        padding: 50px 10px 20px; /* Ajusta ainda mais */
+        padding: 30px 10px 10px; /* Ainda menor para telas pequenas */
       }
       nav ul li {
         margin: 5px 8px; /* Igual ao index.html */
@@ -192,17 +188,21 @@
         font-size: 0.8em; /* Igual ao index.html */
       }
       .projeto-container {
-        margin-bottom: 15px; /* Ainda menor */
+        margin-bottom: 8px; /* Ainda menor */
       }
       .projeto-container img {
-        max-width: 150px; /* Imagem ainda menor */
-        height: 150px;
+        max-width: 120px; /* Imagem ainda menor */
+        height: 120px;
+      }
+      .projeto-texto {
+        margin: 3px 0; /* Menor ainda */
+        padding: 6px; /* Menor padding */
       }
       .projeto-texto h3 {
-        font-size: 1em; /* Título ainda menor */
+        font-size: 0.9em; /* Título ainda menor */
       }
       .projeto-texto p {
-        font-size: 0.8em; /* Texto ainda menor */
+        font-size: 0.7em; /* Texto ainda menor */
       }
     }
   </style>
