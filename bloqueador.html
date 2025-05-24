@@ -50,7 +50,7 @@
     }
 
     /* Seção de bloqueador */
-    section#suporte {
+    section#bloqueador {
       padding: 80px 5px 20px; /* Padding lateral reduzido */
       display: flex;
       flex-direction: column;
@@ -64,7 +64,7 @@
       align-items: center;
       margin-bottom: 100px; /* Espaço entre blocos */
       width: 100%;
-      max-width: 1600px; /* Aumentado para aproximar das margens */
+      max-width: 1600px; /* Aumentado para margens */
       padding: 0 5px; /* Espaço lateral interno */
     }
 
@@ -96,21 +96,21 @@
     }
 
     /* Efeito de hover para imagens e iframe */
-    .suporte-container img:hover,
-    .suporte-container iframe:hover {
+    .bloqueador-container img:hover,
+    .bloqueador-container iframe:hover {
       transform: scale(1.05);
       opacity: 1; /* Remove transparência no hover */
     }
 
     /* Caixa de texto */
-    .suporte-texto {
+    .bloqueador-texto {
       background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
       padding: 15px;
       border-radius: 5px;
       margin: 0 10px; /* Espaço entre imagem/vídeo e texto */
       max-width: 400px; /* Largura da caixa de texto */
       text-align: left;
-      opacity: 0.8; /* Transparência da caixa de texto: 20% */
+      opacity: 0.8; /* Transparência: 20% */
     }
 
     /* Título do bloco */
@@ -134,7 +134,7 @@
 
     /* Estilo para o link do vídeo */
     .video-link {
-      display: inline-block; /* Para alinhar com o botão */
+      display: inline-block; /* Alinha com o botão */
       color: #ffffff;
       text-decoration: underline;
       font-size: 1em;
@@ -164,35 +164,110 @@
     /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
     .bloqueador-container:nth-child(odd) {
       flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
-      justify-content: flex-start; /* Alinha à esquerda do layout */
+      justify-content: flex-start; /* Alinha à esquerda */
     }
 
     /* Alinhamento: segunda imagem à direita, texto à esquerda */
     .bloqueador-container:nth-child(even) {
       flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-      justify-content: flex-end; /* Alinha à direita do layout */
+      justify-content: flex-end; /* Alinha à direita */
     }
 
-    /* Responsividade para telas menores */
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
     @media (max-width: 768px) {
+      body {
+        background-size: cover; /* Igual ao projeto.html */
+        background-position: center 70px; /* Igual ao projeto.html */
+        background-repeat: no-repeat;
+        background-color: black; /* Fundo preto */
+        background-attachment: scroll; /* Fundo rola */
+      }
+      section#bloqueador {
+        padding: 40px 20px 10px; /* Igual ao projeto.html */
+      }
+      section#bloqueador h1 {
+        margin-top: 35px; /* Afastar h1 10px do topo, igual ao projeto.html */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Igual ao projeto.html */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Igual ao projeto.html */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Igual ao projeto.html */
+      }
       .bloqueador-container {
-        flex-direction: column;
+        flex-direction: column; /* Empilha imagem/vídeo e texto */
         align-items: center;
         text-align: center;
-      }
-      .bloqueador-texto {
-        margin: 10px 0;
-        max-width: 90%;
+        margin-bottom: 10px; /* Igual ao projeto.html */
+        max-width: 90%; /* Igual ao projeto.html */
       }
       .bloqueador-container img,
       .bloqueador-container iframe {
-        margin: 0; /* Remove margens laterais em telas pequenas */
+        max-width: 150px; /* Igual ao projeto.html */
+        height: 150px; /* Igual ao projeto.html */
+        margin: 0; /* Remove margens laterais */
+      }
+      .bloqueador-texto {
+        margin: 5px 0; /* Igual ao projeto.html */
+        max-width: 90%; /* Igual ao projeto.html */
+        padding: 8px; /* Igual ao projeto.html */
+        text-align: center; /* Centraliza texto */
+      }
+      .bloqueador-texto h3 {
+        font-size: 1em; /* Igual ao projeto.html */
+      }
+      .bloqueador-texto p {
+        font-size: 0.8em; /* Igual ao projeto.html */
       }
       .video-link,
       .copy-button {
         text-align: center;
-        display: block; /* Empilha verticalmente em telas pequenas */
-        margin: 10px auto;
+        display: block; /* Empilha verticalmente */
+        margin: 10px auto; /* Centraliza */
+      }
+    }
+    /* Responsividade para telas até 480px (celulares pequenos) */
+    @media (max-width: 480px) {
+      body {
+        background-size: 100%; /* Igual ao projeto.html */
+        background-position: center 70px; /* Igual ao projeto.html */
+        background-repeat: no-repeat;
+        background-color: black;
+        background-attachment: scroll;
+      }
+      section#bloqueador {
+        padding: 30px 20px 10px; /* Igual ao projeto.html */
+      }
+      section#bloqueador h1 {
+        margin-top: 35px; /* Afastar h1 10px do topo, igual ao projeto.html */
+      }
+      nav ul li {
+        margin: 5px 8px; /* Igual ao projeto.html */
+      }
+      nav ul li a {
+        font-size: 0.8em; /* Igual ao projeto.html */
+      }
+      .bloqueador-container {
+        margin-bottom: 8px; /* Igual ao projeto.html */
+        max-width: 95%; /* Igual ao projeto.html */
+      }
+      .bloqueador-container img,
+      .bloqueador-container iframe {
+        max-width: 120px; /* Igual ao projeto.html */
+        height: 120px; /* Igual ao projeto.html */
+      }
+      .bloqueador-texto {
+        margin: 3px 0; /* Igual ao projeto.html */
+        padding: 6px; /* Igual ao projeto.html */
+      }
+      .bloqueador-texto h3 {
+        font-size: 0.9em; /* Igual ao projeto.html */
+      }
+      .bloqueador-texto p {
+        font-size: 0.7em; /* Igual ao projeto.html */
       }
     }
   </style>
@@ -217,22 +292,22 @@
     <!-- Primeiro Bloco: Imagem à esquerda, texto à direita -->
     <div class="bloqueador-container">
       <a href="#bloqueador">
-        <img src="bloqueador1.jpeg" alt="Suporte Imagem 1">
+        <img src="bloqueador1.jpeg" alt="Bloqueador Imagem 1">
       </a>
       <div class="bloqueador-texto">
         <h3>DETALHE DO BLOQUEADOR</h3>
-        <p>O Bloqueador de Circuitos de Base Fusivel, foi desenvolvido a partir de uma necessidade da EDP-ES, para realmente atender a NR-10, quando se trata de desenergização, pois para EDP-ES a rede só é considerada desenergizada, quando os 5 passos da NR-10 são feitos, eles são: 1- Desligar, 2- Impedir a Reenergização (o que o bloqueador da INOVAÇÃO BARCELLOS faz com excelência, pois é o único equipamento do mercado que sem a chave de instalação e remoção a distância, sua retirada só pode ser feita ao contato com equipe de linha viva), 3- Testar, 4- Aterrar e 5-Sinalizar. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que impede o religamento da rede acidentalmente ou propositalmente em redes desenergizada, a instalação do bloqueador é feita no método à distância, onde é possível ser feita sua instalação e remoção com segurança. O Bloqueador de Circuitos já foi testado, aprovado e homologado na EDP.</p>
+        <p>O Bloqueador de Circuitos de Base Fusível, foi desenvolvido a partir de uma necessidade da EDP-ES, para realmente atender a NR-10, quando se trata de desenergização, pois para EDP-ES a rede só é considerada desenergizada, quando os 5 passos da NR-10 são feitos, eles são: 1- Desligar, 2- Impedir a Reenergização (o que o bloqueador da INOVAÇÃO BARCELLOS faz com excelência, pois é o único equipamento do mercado que sem a chave de instalação e remoção a distância, sua retirada só pode ser feita ao contato com equipe de linha viva), 3- Testar, 4- Aterrar e 5-Sinalizar. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que impede o religamento da rede acidentalmente ou propositalmente em redes desenergizada, a instalação do bloqueador é feita no método à distância, onde é possível ser feita sua instalação e remoção com segurança. O Bloqueador de Circuitos já foi testado, aprovado e homologado na EDP.</p>
       </div>
     </div>
 
     <!-- Segundo Bloco: Imagem à direita, texto à esquerda -->
     <div class="bloqueador-container">
       <a href="#bloqueador">
-        <img src="bloqueador2.jpeg" alt="Suporte Imagem 2">
+        <img src="bloqueador2.jpeg" alt="Bloqueador Imagem 2">
       </a>
-      <div class="suporte-texto">
-        <h3>FUNCIONALIDADE DO SUPORTE</h3>
-        <p>Construido para ser de fácil instalação e remoção (na foto ao lado esquerdo, é possivel ver a facilidade de instalação e remoção do BLOQUEADOR mesmo a noite), o Bloqueador de Circuito de Base Fusivel, é leve, pesa menos de 250 gramas, tem um sistema anti-queda, é resitente as interpéries e ainda pode ser usado para suspensão do fornecimento de clientes atendidos em Média Tensão.</p>
+      <div class="bloqueador-texto">
+        <h3>FUNCIONALIDADE DO BLOQUEADOR</h3>
+        <p>Construído para ser de fácil instalação e remoção (na foto ao lado, é possível ver a facilidade de instalação e remoção do BLOQUEADOR mesmo à noite), o Bloqueador de Circuito de Base Fusível, é leve, pesa menos de 250 gramas, tem um sistema anti-queda, é resistente às intempéries e ainda pode ser usado para suspensão do fornecimento de clientes atendidos em Média Tensão.</p>
       </div>
     </div>
 
@@ -241,7 +316,7 @@
       <a href="https://youtu.be/3jCjy4S1dL4" target="_blank">
         <iframe src="https://www.youtube.com/embed/3jCjy4S1dL4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </a>
-      <div class="suporte-texto">
+      <div class="bloqueador-texto">
         <h3>DEMONSTRAÇÃO EM VÍDEO</h3>
         <p>Vídeo mostrando o Bloqueador de Circuitos sendo instalado por um eletricista pela primeira vez, demonstrando sua facilidade na instalação.<span class="clique-no-links">Clique no Link.</span></p>
         <a href="https://youtu.be/3jCjy4S1dL4" class="video-link" target="_blank">Assista no YouTube: https://youtu.be/3jCjy4S1dL4</a>
