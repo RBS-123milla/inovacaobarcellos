@@ -64,7 +64,7 @@
       align-items: center;
       margin-bottom: 100px; /* Espaço entre blocos */
       width: 100%;
-      max-width: 1600px; /* Aumentado para aproximar das margens */
+      max-width: 1600px; /* Aumentado para margens */
       padding: 0 5px; /* Espaço lateral interno */
     }
 
@@ -110,7 +110,7 @@
       margin: 0 10px; /* Espaço entre imagem/vídeo e texto */
       max-width: 400px; /* Largura da caixa de texto */
       text-align: left;
-      opacity: 0.8; /* Transparência da caixa de texto: 20% */
+      opacity: 0.8; /* Transparência: 20% */
     }
 
     /* Título do bloco */
@@ -134,7 +134,7 @@
 
     /* Estilo para o link do vídeo */
     .video-link {
-      display: inline-block; /* Para alinhar com o botão */
+      display: inline-block; /* Alinha com o botão */
       color: #ffffff;
       text-decoration: underline;
       font-size: 1em;
@@ -164,35 +164,110 @@
     /* Alinhamento: primeira imagem e vídeo à esquerda, texto à direita */
     .suporte-container:nth-child(odd) {
       flex-direction: row; /* Imagem/vídeo à esquerda, texto à direita */
-      justify-content: flex-start; /* Alinha à esquerda do layout */
+      justify-content: flex-start; /* Alinha à esquerda */
     }
 
     /* Alinhamento: segunda imagem à direita, texto à esquerda */
     .suporte-container:nth-child(even) {
       flex-direction: row-reverse; /* Imagem à direita, texto à esquerda */
-      justify-content: flex-end; /* Alinha à direita do layout */
+      justify-content: flex-end; /* Alinha à direita */
     }
 
-    /* Responsividade para telas menores */
+    /* Responsividade para telas até 768px (tablets e celulares maiores) */
     @media (max-width: 768px) {
+      body {
+        background-size: cover; /* Igual ao carro.html */
+        background-position: center 70px; /* Igual ao carro.html */
+        background-repeat: no-repeat;
+        background-color: black; /* Fundo preto */
+        background-attachment: scroll; /* Fundo rola */
+      }
+      section#suporte {
+        padding: 40px 20px 10px; /* Igual ao carro.html */
+      }
+      section#suporte h1 {
+        margin-top: 35px; /* Afastar h1 10px do topo, igual ao carro.html */
+      }
+      nav ul {
+        flex-wrap: wrap; /* Igual ao carro.html */
+      }
+      nav ul li {
+        margin: 5px 10px; /* Igual ao carro.html */
+      }
+      nav ul li a {
+        font-size: 0.9em; /* Igual ao carro.html */
+      }
       .suporte-container {
-        flex-direction: column;
+        flex-direction: column; /* Empilha imagem/vídeo e texto */
         align-items: center;
         text-align: center;
-      }
-      .suporte-texto {
-        margin: 10px 0;
-        max-width: 90%;
+        margin-bottom: 10px; /* Igual ao carro.html */
+        max-width: 90%; /* Igual ao carro.html */
       }
       .suporte-container img,
       .suporte-container iframe {
-        margin: 0; /* Remove margens laterais em telas pequenas */
+        max-width: 150px; /* Igual ao carro.html */
+        height: 150px; /* Igual ao carro.html */
+        margin: 0; /* Remove margens laterais */
+      }
+      .suporte-texto {
+        margin: 5px 0; /* Igual ao carro.html */
+        max-width: 90%; /* Igual ao carro.html */
+        padding: 8px; /* Igual ao carro.html */
+        text-align: center; /* Centraliza texto */
+      }
+      .suporte-texto h3 {
+        font-size: 1em; /* Igual ao carro.html */
+      }
+      .suporte-texto p {
+        font-size: 0.8em; /* Igual ao carro.html */
       }
       .video-link,
       .copy-button {
         text-align: center;
-        display: block; /* Empilha verticalmente em telas pequenas */
-        margin: 10px auto;
+        display: block; /* Empilha verticalmente */
+        margin: 10px auto; /* Centraliza */
+      }
+    }
+    /* Responsividade para telas até 480px (celulares pequenos) */
+    @media (max-width: 480px) {
+      body {
+        background-size: 100%; /* Igual ao carro.html */
+        background-position: center 70px; /* Igual ao carro.html */
+        background-repeat: no-repeat;
+        background-color: black;
+        background-attachment: scroll;
+      }
+      section#suporte {
+        padding: 30px 20px 10px; /* Igual ao carro.html */
+      }
+      section#suporte h1 {
+        margin-top: 35px; /* Afastar h1 10px do topo, igual ao carro.html */
+      }
+      nav ul li {
+        margin: 5px 8px; /* Igual ao carro.html */
+      }
+      nav ul li a {
+        font-size: 0.8em; /* Igual ao carro.html */
+      }
+      .suporte-container {
+        margin-bottom: 8px; /* Igual ao carro.html */
+        max-width: 95%; /* Igual ao carro.html */
+      }
+      .suporte-container img,
+      .suporte-container iframe {
+        max-width: 120px; /* Igual ao carro.html */
+        height: 120px; /* Igual ao carro.html */
+      }
+      .suporte-texto {
+        margin: 3px 0; /* Igual ao carro.html */
+        padding: 6px; /* Igual ao carro.html */
+      }
+      .suporte-texto h3 {
+        font-size: 0.9em; /* Igual ao carro.html */
+      }
+      .suporte-texto p {
+        font-size: 0.7em; /* Igual ao carro.html */
       }
     }
   </style>
@@ -221,7 +296,7 @@
       </a>
       <div class="suporte-texto">
         <h3>DETALHE DO SUPORTE</h3>
-        <p>O Suporte Temporário de Base Fusivel, foi desenvolvido a partir de uma necessidade da EDP-ES, para agilizar o reestabelicmento de energia elétrica em casos de danos a base fusível, onde o tempo de reparo manual e substituição da mesma é demorado e afeta os clientes da EDP-ES. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que permite a instalação de uma base fusível nova, de forma provisória no método à distância, onde é possível ser feita sua instalação e reestabelecimento da energia eletrica em até 10 minutos com segurança. O Suporte Temporário já foi testado, aprovado e homologado na EDP.</p>
+        <p>O Suporte Temporário de Base Fusível, foi desenvolvido a partir de uma necessidade da EDP-ES, para agilizar o reestabelecimento de energia elétrica em casos de danos a base fusível, onde o tempo de reparo manual e substituição da mesma é demorado e afeta os clientes da EDP-ES. Com isso em mente a INOVAÇÃO BARCELLOS desenvolveu um equipamento que permite a instalação de uma base fusível nova, de forma provisória no método à distância, onde é possível ser feita sua instalação e reestabelecimento da energia elétrica em até 10 minutos com segurança. O Suporte Temporário já foi testado, aprovado e homologado na EDP.</p>
       </div>
     </div>
 
@@ -232,7 +307,7 @@
       </a>
       <div class="suporte-texto">
         <h3>FUNCIONALIDADE DO SUPORTE</h3>
-        <p>Construido para ser de fácil instalação e durável, o Suporte Temporário de Base Fusivel, é excelente nos quesitos: Segurança para a estrutura(não sobrecarrega a estruturas ou cabos), Segurança para o eletricista(pois é leve e é instalado no metodo à distância) e resitente as interpéries.</p>
+        <p>Construído para ser de fácil instalação e durável, o Suporte Temporário de Base Fusível, é excelente nos quesitos: Segurança para a estrutura (não sobrecarrega a estruturas ou cabos), Segurança para o eletricista (pois é leve e é instalado no método à distância) e resistente às intempéries.</p>
       </div>
     </div>
 
